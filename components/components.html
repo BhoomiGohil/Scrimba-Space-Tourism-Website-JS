@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <title>Components</title>
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../components/components.css" />
+    <style>
+      .navigation-menu.mobile {
+        border-right: 0.188rem solid transparent;
+      }
+
+      .navigation-menu.mobile:hover {
+        border-right-color: hsl(var(--clr-white) / 0.5);
+      }
+
+      .navigation-menu.mobile:active {
+        border-right-color: hsl(var(--clr-white));
+      }
+
+      .button.mobile:hover,
+      .button.mobile:focus {
+        box-shadow: 0 0 0 4rem hsl(var(--clr-white) / 0.1);
+      }
+
+      @media (min-width: 0px) and (max-width: 991px) {
+        .grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Focus on star comments to copy components as it has lot of examples. -->
+    <div class="main">
+      <div class="container">
+        <div
+          class="flex column border-light"
+          style="margin: 5rem 0; padding: 4rem; gap: 3rem"
+        >
+          <h3 class="fs-3 ff-bellefair uppercase">Single Components</h3>
+
+          <div class="flex column">
+            <!-- 
+            *****
+            *****
+            *****
+            *****
+            *****
+            -->
+            <!-- **************************** Start Logo Component **************************** -->
+            <img
+              class="logo"
+              src="../assets/shared/logo.svg"
+              alt="Logo of the site"
+            />
+            <!-- **************************** End Logo Component ****************************-->
+            <!-- 
+            *****
+            *****
+            *****
+            *****
+            *****
+            -->
+          </div>
+
+          <div
+            class="grid align-center border-light"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <div class="flex justify-center align-center" style="gap: 2rem">
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+              <!-- **************************** Start Navigation Menu Component **************************** -->
+              <a
+                class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+              >
+                <span class="bold letter-spacing-207"> 00 </span>
+                Menu
+              </a>
+              <!-- **************************** End Navigation Menu Component **************************** -->
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+
+              <a
+                class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+                style="border-bottom-color: hsl(var(--clr-white) / 0.5)"
+              >
+                <span class="bold letter-spacing-207"> 00 </span>
+                Menu - Hover
+              </a>
+              <a
+                class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+                style="border-bottom-color: hsl(var(--clr-white))"
+              >
+                <span class="bold letter-spacing-207"> 00 </span>
+                Menu - Active
+              </a>
+            </div>
+            <div
+              class="flex column justify-center align-center"
+              style="gap: 2rem"
+            >
+              <a
+                class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+                style="
+                  width: 100%;
+                  height: auto;
+                  border-top: none;
+                  border-bottom: none;
+                "
+              >
+                <span class="bold letter-spacing-207"> 00 </span>
+                Menu
+              </a>
+              <a
+                class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+                style="
+                  width: 100%;
+                  height: auto;
+                  border-bottom: none;
+                  border-top: none;
+                  border-right: 0.188rem solid hsl(var(--clr-white) / 0.5);
+                "
+              >
+                <span class="bold letter-spacing-207"> 00 </span>
+                Menu - Hover
+              </a>
+              <a
+                class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+                style="
+                  width: 100%;
+                  height: auto;
+                  border-bottom: none;
+                  border-top: none;
+                  border-right: 0.188rem solid hsl(var(--clr-white));
+                "
+              >
+                <span class="bold letter-spacing-207"> 00 </span>
+                Menu - Active
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="flex column border-light"
+            style="padding: 3rem; --bw: 0.1rem; --bs: dotted; gap: 3.938rem"
+          >
+            <div
+              class="tabs-menu-container flex justify-center align-center"
+              style="gap: 3.938rem"
+            >
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+              <!-- **************************** Start Tabs Menu Component **************************** -->
+              <a
+                class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+              >
+                Tabs Menu
+              </a>
+              <!-- **************************** End Tabs Menu Component **************************** -->
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+
+              <a
+                class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+                style="border-color: hsl(var(--clr-white) / 0.5)"
+              >
+                Tabs Menu - Hover
+              </a>
+              <a
+                class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                href="../index.html"
+                style="border-color: hsl(var(--clr-white))"
+              >
+                Tabs Menu - Active
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="grid border-light"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              justify-items: center;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <!-- 
+            *****
+            *****
+            *****
+            *****
+            *****
+            -->
+            <!-- **************************** Start Button Component **************************** -->
+            <a
+              class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
+            >
+              Explore
+            </a>
+            <!-- **************************** End Button Component **************************** -->
+            <!-- 
+            *****
+            *****
+            *****
+            *****
+            *****
+            -->
+            <a
+              class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
+              style="
+                box-shadow: 0 0 0 5.5rem hsl(var(--clr-white) / 0.1);
+                color: hsl(var(--clr-dark) / 0.5);
+              "
+            >
+              Explore - Hover
+            </a>
+          </div>
+
+          <div
+            class="grid border-light"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              justify-items: center;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <a
+              class="button mobile flex justify-center align-center bg-white fs-9 ff-bellefair text-dark uppercase"
+              style="width: 9rem; height: 9rem"
+            >
+              Explore - Mobile
+            </a>
+            <a
+              class="button mobile flex justify-center align-center bg-white fs-9 ff-bellefair text-dark uppercase"
+              style="
+                width: 9rem;
+                height: 9rem;
+                box-shadow: 0 0 0 4rem hsl(var(--clr-white) / 0.1);
+                color: hsl(var(--clr-dark) / 0.5);
+              "
+            >
+              Explore - Mobile Hover
+            </a>
+          </div>
+
+          <div
+            class="grid border-light align-center"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <div class="flex justify-center" style="gap: 3.375rem">
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+              <!-- **************************** Start Small Single Pagination Component **************************** -->
+              <a class="small-pagination bg-white"></a>
+              <!-- **************************** End Small Single Pagination Component **************************** -->
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+
+              <a class="small-pagination bg-white" style="opacity: 50.01%"></a>
+              <a class="small-pagination bg-white" style="opacity: 100%"></a>
+            </div>
+
+            <div class="flex justify-center" style="gap: 3.375rem">
+              <a
+                class="small-pagination tablet bg-white"
+                style="width: 0.625rem; height: 0.625rem"
+              ></a>
+              <a
+                class="small-pagination tablet bg-white"
+                style="width: 0.625rem; height: 0.625rem; opacity: 50.01%"
+              ></a>
+              <a
+                class="small-pagination tablet bg-white"
+                style="width: 0.625rem; height: 0.625rem; opacity: 100%"
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="grid border-light align-center"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <div class="flex justify-center" style="gap: 3.375rem">
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+              <!-- **************************** Start Large Single Pagination Component **************************** -->
+              <a
+                class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                >0
+              </a>
+              <!-- **************************** End Large Single Pagination Component **************************** -->
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+
+              <a
+                class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                style="border-color: hsl(var(--clr-white))"
+                >0
+              </a>
+              <a
+                class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                style="
+                  color: hsl(var(--clr-dark));
+                  background-color: hsl(var(--clr-white));
+                  border-color: hsl(var(--clr-white));
+                "
+                >0
+              </a>
+            </div>
+
+            <div class="flex justify-center" style="gap: 3.375rem">
+              <a
+                class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                style="width: 3.5rem; height: 3.5rem"
+                >0
+              </a>
+              <a
+                class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                style="
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  border-color: hsl(var(--clr-white));
+                "
+                >0
+              </a>
+              <a
+                class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                style="
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  color: hsl(var(--clr-dark));
+                  background-color: hsl(var(--clr-white));
+                  border-color: hsl(var(--clr-white));
+                "
+                >0
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex column border-light"
+          style="margin: 5rem 0; padding: 4rem; gap: 3rem"
+        >
+          <h3 class="fs-3 ff-bellefair uppercase">Grouped Components</h3>
+          <div
+            class="flex column border-light"
+            style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
+          >
+            <!-- 
+            *****
+            *****
+            *****
+            *****
+            *****
+            -->
+            <!-- **************************** Start Whole Navigation Component **************************** -->
+            <div class="navigation flex align-center justify-between">
+              <img src="../assets/shared/logo.svg" class="logo" />
+              <div
+                class="navigation-divider divider-white"
+                style="--o: 25%; z-index: 1"
+              ></div>
+              <input type="checkbox" id="navigation-mobile-menu-button" />
+              <label
+                for="navigation-mobile-menu-button"
+                class="navigation-mobile-menu"
+              >
+              </label>
+              <div class="navigation-menu-container flex align-center">
+                <a
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  <span class="bold letter-spacing-207"> 00 </span>
+                  Home
+                </a>
+                <a
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/destination.html"
+                >
+                  <span class="bold letter-spacing-207"> 01 </span>
+                  Destination
+                </a>
+                <a
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/crew.html"
+                >
+                  <span class="bold letter-spacing-207"> 02 </span>
+                  Crew
+                </a>
+                <a
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/technology.html"
+                >
+                  <span class="bold letter-spacing-207"> 03 </span>
+                  Technology
+                </a>
+              </div>
+            </div>
+            <!-- **************************** End Whole Navigation Component **************************** -->
+            <!-- 
+            *****
+            *****
+            *****
+            *****
+            *****
+            -->
+          </div>
+
+          <div
+            class="flex column border-light"
+            style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
+          >
+            <div
+              class="navigation tablet flex align-center justify-between"
+              style="margin: 0rem; padding: 0; gap: 2.5rem"
+            >
+              <img
+                class="logo"
+                src="../assets/shared/logo.svg"
+                alt="Logo of the site"
+              />
+              <div
+                class="navigation-divider tablet divider-white"
+                style="display: none"
+              ></div>
+              <div
+                class="navigation-menu-container tablet flex align-center"
+                style="
+                  justify-content: end;
+                  flex-grow: 1;
+                  padding: 0 2.5rem 0 2.5rem;
+                "
+              >
+                <img
+                  src="../assets/shared/icon-close.svg"
+                  class="navigation-mobile-menu-close flex"
+                />
+                <a
+                  class="navigation-menu active flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                >
+                  <span class="bold letter-spacing-207"> 00 </span>
+                  Home
+                </a>
+                <a
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                >
+                  <span class="bold letter-spacing-207"> 01 </span>
+                  Destination
+                </a>
+                <a
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                >
+                  <span class="bold letter-spacing-207"> 02 </span>
+                  Crew
+                </a>
+                <a
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                >
+                  <span class="bold letter-spacing-207"> 03 </span>
+                  Technology
+                </a>
+              </div>
+              <img
+                src="../assets/shared/icon-hamburger.svg"
+                class="navigation-mobile-menu"
+              />
+            </div>
+          </div>
+          <div
+            class="flex column border-light"
+            style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
+          >
+            <div
+              class="navigation mobile flex align-center justify-between"
+              style="height: auto; padding: 0 1.5rem"
+            >
+              <img
+                class="logo mobile"
+                src="../assets/shared/logo.svg"
+                alt="Logo of the site"
+                style="width: 2.5rem; height: 2.5rem"
+              />
+              <div
+                class="navigation-divider mobile divider-white"
+                style="display: none"
+              ></div>
+              <div
+                class="navigation-menu-container mobile flex"
+                style="
+                  width: 80%;
+                  flex-direction: column;
+                  padding: 2rem 0 2rem 2rem;
+                  gap: 2rem;
+                "
+              >
+                <img
+                  src="../assets/shared/icon-close.svg"
+                  class="navigation-mobile-menu-close mobile flex"
+                  style="display: flex"
+                />
+                <a
+                  class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    border-bottom: none;
+                    border-top: none;
+                  "
+                >
+                  <span class="bold letter-spacing-207"> 00 </span>
+                  Home
+                </a>
+                <a
+                  class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    border-bottom: none;
+                    border-top: none;
+                  "
+                >
+                  <span class="bold letter-spacing-207"> 01 </span>
+                  Destination
+                </a>
+                <a
+                  class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    border-bottom: none;
+                    border-top: none;
+                  "
+                >
+                  <span class="bold letter-spacing-207"> 02 </span>
+                  Crew
+                </a>
+                <a
+                  class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    border-bottom: none;
+                    border-top: none;
+                  "
+                >
+                  <span class="bold letter-spacing-207"> 03 </span>
+                  Technology
+                </a>
+              </div>
+              <img
+                src="../assets/shared/icon-hamburger.svg"
+                class="navigation-mobile-menu mobile"
+                style="display: block"
+              />
+            </div>
+          </div>
+
+          <div
+            class="grid align-center border-light"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              justify-content: space-around;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <div
+              class="flex column justify-center align-center"
+              style="gap: 3.938rem"
+            >
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+              <!-- **************************** Start Whole Tabs Component **************************** -->
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Titan
+                </a>
+              </div>
+              <!-- **************************** End Whole Tabs Component **************************** -->
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Titan
+                </a>
+              </div>
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Titan
+                </a>
+              </div>
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  href="../index.html"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Titan
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="flex column justify-center align-center"
+              style="gap: 3.938rem"
+            >
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Titan
+                </a>
+              </div>
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Titan
+                </a>
+              </div>
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Titan
+                </a>
+              </div>
+              <div class="tabs-menu-container flex justify-center align-center">
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Moon
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Mars
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                >
+                  Europa
+                </a>
+                <a
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../index.html"
+                  style="border-color: hsl(var(--clr-white))"
+                >
+                  Titan
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid align-center border-light"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+              <!-- **************************** Start Small Pagination Component **************************** -->
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white"></a>
+              </div>
+              <!-- **************************** End Small Pagination Component **************************** -->
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white"></a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+                <a class="small-pagination bg-white"></a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white"></a>
+                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+              </div>
+            </div>
+
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem"
+                ></a>
+                <a
+                  class="small-pagination tablet bg-white"
+                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid align-center border-light"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+              <!-- **************************** Start Large Pagination Component **************************** -->
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  style="
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >1
+                </a>
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  >2
+                </a>
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  >3
+                </a>
+              </div>
+              <!-- **************************** Start Large Pagination Component **************************** -->
+              <!-- 
+              *****
+              *****
+              *****
+              *****
+              *****
+              -->
+
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  >1
+                </a>
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  style="
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >2
+                </a>
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  >3
+                </a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  >1
+                </a>
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  >2
+                </a>
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+                  style="
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >3
+                </a>
+              </div>
+            </div>
+
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >1
+                </a>
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="width: 3.5rem; height: 3.5rem"
+                  >2
+                </a>
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="width: 3.5rem; height: 3.5rem"
+                  >3
+                </a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="width: 3.5rem; height: 3.5rem"
+                  >1
+                </a>
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >2
+                </a>
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="width: 3.5rem; height: 3.5rem"
+                  >3
+                </a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="width: 3.5rem; height: 3.5rem"
+                  >1
+                </a>
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="width: 3.5rem; height: 3.5rem"
+                  >2
+                </a>
+                <a
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
+                  style="
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >3
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid align-center border-light"
+            style="
+              padding: 3rem;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              --bw: 0.1rem;
+              --bs: dotted;
+            "
+          >
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >1
+                </a>
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="width: 2.5rem; height: 2.5rem"
+                  >2
+                </a>
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="width: 2.5rem; height: 2.5rem"
+                  >3
+                </a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="width: 2.5rem; height: 2.5rem"
+                  >1
+                </a>
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >2
+                </a>
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="width: 2.5rem; height: 2.5rem"
+                  >3
+                </a>
+              </div>
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="width: 2.5rem; height: 2.5rem"
+                  >1
+                </a>
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="width: 2.5rem; height: 2.5rem"
+                  >2
+                </a>
+                <a
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
+                  style="
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    color: hsl(var(--clr-dark));
+                    background-color: hsl(var(--clr-white));
+                    border-color: hsl(var(--clr-white));
+                  "
+                  >3
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
