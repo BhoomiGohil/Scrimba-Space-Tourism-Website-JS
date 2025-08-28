@@ -5,7 +5,9 @@ An interactive, JavaScript-powered website designed to simulate a space tourism 
 ## 🚀 Features
 
 Dynamic Content: Utilizes JavaScript to load and display content dynamically, enhancing user interaction.
+
 Responsive Design: Ensures compatibility across various devices and screen sizes.
+
 Interactive UI: Engages users with interactive elements and smooth transitions.
 
 ## 🛠️ Built With
