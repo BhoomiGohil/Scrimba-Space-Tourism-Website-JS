@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Space tourism website</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      .main {
+        background-image: url(./assets/home/background-home-desktop.jpg);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+      }
+
+      @media (min-width: 736px) and (max-width: 832px) {
+        .main {
+          background-image: url(./assets/home/background-home-tablet.jpg);
+        }
+      }
+
+      @media (min-width: 0px) and (max-width: 735px) {
+        .main {
+          background-image: url(./assets/home/background-home-mobile.jpg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="navigation"></div>
+      <div id="home" class="main-content index flex justify-center"></div>
+    </div>
+    <script type="module" src="../index.js"></script>
+  </body>
+</html>
