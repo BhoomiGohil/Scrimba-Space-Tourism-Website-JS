@@ -3,11 +3,14 @@ const response = await fetch("../data.json");
 const data = await response.json();
 
 // ✅ Grab possible containers from the DOM
+var defaultIndex = 0;
+
+var navigationParent = document.querySelector("#navigation");
+
 var homeParent = document.querySelector("#home");
 var destinationParent = document.querySelector("#contentDestination");
 var crewParent = document.querySelector("#contentCrew");
 var technologyParent = document.querySelector("#contentTechnology");
-var navigationParent = document.querySelector("#navigation");
 
 // ✅ Navigation builder
 function loadNav() {
@@ -91,67 +94,66 @@ if (homeParent) {
 }
 
 // ✅ Destination template
-function loadDestination() {
+function loadDestinationContent(index) {
   return `
-      <div class="content destination flex column justify-center">
-        <h5 class="numbered-title">
-          <span>01</span> PICK YOUR DESTINATION
-        </h5>
-        ${data.destinations
-          .map((element) => {
-            return `<div class="content-grid destination flex align-center justify-between">
-              <div class="content-image destination flex">
-                <img src="${
-                  "." + element.images.webp
-                }" style="width: 100%; height: 100%" />
-              </div>
-              <div class="content-block destination flex column justify-center">
-                <div class="tabs-menu-container flex align-center">
-                    ${data.destinations
-                      .map(
-                        (element) =>
-                          `<div class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white">
-                            ${element.name}
-                          </div>`
-                      )
-                      .join("")}
-                </div>
-                <div class="flex column">
-                  <h1 class="fs-2 ff-bellefair uppercase text-white">${
-                    element.name
-                  }</h1>
-                  <p class="fs-9 ff-barlow text-light">
-                    ${element.description}
-                  </p>
-                </div>
-                <div class="divider-white" style="--o: 25%"></div>
-                <div
-                  class="grid align-center"
-                  style="grid-template-columns: 1fr 1fr"
-                >
-                  <div class="flex column" style="gap: 0.75rem">
-                    <p class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase">
-                      AVG. DISTANCE
-                    </p>
-                    <h6 class="fs-6 ff-bellefair text-white uppercase">
-                      ${element.distance}
-                    </h6>
-                  </div>
-                  <div class="flex column" style="gap: 0.75rem">
-                    <p class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase">
-                      Est. travel time
-                    </p>
-                    <h6 class="fs-6 ff-bellefair text-white uppercase">
-                      ${element.travel}
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>`;
-          })
-          .join("")} 
+  <div class="content destination flex column justify-center">
+    <h5 class="numbered-title">
+      <span>01</span> PICK YOUR DESTINATION
+    </h5>
+    <div class="content-grid destination flex align-center justify-between">
+      <div class="content-image destination flex">
+        <img src="" style="width: 100%; height: 100%" />
       </div>
-  `;
+      <div class="content-block destination flex column justify-center">
+        <div class="tabs-menu-container flex align-center">
+          ${data.destinations
+            .map(
+              (element) =>
+                `<div 
+                    class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white">
+                    ${element.name}
+                </div>`
+            )
+            .join("")}
+        </div>
+        <div class="flex column">
+          <h1 class="content-name fs-2 ff-bellefair uppercase text-white"></h1>
+          <p class="content-description fs-9 ff-barlow text-light"></p>
+        </div>
+        <div class="divider-white" style="--o: 25%"></div>
+        <div class="grid align-center" style="grid-template-columns: 1fr 1fr">
+          <div class="flex column" style="gap: 0.75rem">
+            <p class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase">
+              AVG. DISTANCE
+            </p>
+            <h6 class="content-distance fs-6 ff-bellefair text-white uppercase"></h6>
+          </div>
+          <div class="flex column" style="gap: 0.75rem">
+            <p class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase">
+              Est. travel time
+            </p>
+            <h6 class="content-travel fs-6 ff-bellefair text-white uppercase"></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function updateDestination(index) {
+  var element = data.destinations[index];
+
+  document.querySelector("#contentDestination .content-image > img").src =
+    "." + element.images.webp;
+  document.querySelector("#contentDestination .content-name").textContent =
+    element.name;
+  document.querySelector(
+    "#contentDestination .content-description"
+  ).textContent = element.description;
+  document.querySelector("#contentDestination .content-distance").textContent =
+    element.distance;
+  document.querySelector("#contentDestination .content-travel").textContent =
+    element.travel;
 }
 
 // ✅ Crew template
@@ -261,7 +263,25 @@ function loadTechnology() {
 
 // ✅ Inject correct content depending on which container exists
 if (destinationParent) {
-  destinationParent.innerHTML = loadDestination();
+  // Step 1: Render layout once
+  destinationParent.innerHTML = loadDestinationContent(defaultIndex);
+
+  // Step 2: Load default content
+  updateDestination(defaultIndex);
+
+  // Step 3: Add active class to default tab
+  var tabsMenu = document.querySelectorAll(".tabs-menu");
+  tabsMenu[defaultIndex].classList.add("active");
+
+  tabsMenu.forEach((element, index) => {
+    element.addEventListener("click", () => {
+      tabsMenu.forEach((element, index) => {
+        element.classList.remove("active");
+      });
+      element.classList.add("active");
+      updateDestination(index);
+    });
+  });
 } else if (crewParent) {
   crewParent.innerHTML = loadCrew();
 } else if (technologyParent) {
