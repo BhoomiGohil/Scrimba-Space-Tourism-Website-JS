@@ -94,7 +94,7 @@ if (homeParent) {
 }
 
 // ✅ Destination template
-function loadDestinationContent(index) {
+function loadDestinationContent() {
   return `
   <div class="content destination flex column justify-center">
     <h5 class="numbered-title">
@@ -157,51 +157,47 @@ function updateDestination(index) {
 }
 
 // ✅ Crew template
-function loadCrew() {
+function loadCrewContent() {
   return `
-    <div class="content crew flex column justify-center">
-      <h5 class="numbered-title">
-        <span>02</span>MEET YOUR CREW
-      </h5>
-      ${data.crew
-        .map((element) => {
-          return `
-          <div class="content-grid crew flex align-stretch justify-between">
-            <div class="content-block crew flex column">
-              <div
-                class="flex column justify-center"
-                style="gap: 2.5rem; flex-grow: 1"
-              >
-                <div class="flex column">
-                  <h4 class="fs-4 ff-bellefair uppercase text-white">
-                    ${element.role}
-                  </h4>
-                  <h3 class="fs-3 ff-bellefair uppercase text-white">
-                    ${element.name}
-                  </h3>
-                </div>
-                <p class="fs-9 ff-barlow text-light">
-                  ${element.bio}
-                </p>
-              </div>
-              <div class="small-pagination-container flex">
-                ${data.destinations
-                  .map(
-                    (element) =>
-                      `<div class="small-pagination bg-white">
-                      </div>`
-                  )
-                  .join("")}
-              </div>
-            </div>
-            <div class="content-image crew flex justify-center align-end">
-              <img src="${"." + element.images.webp}" />
-            </div>
-          </div>`;
-        })
-        .join("")}
+  <div class="content crew flex column justify-center">
+    <h5 class="numbered-title">
+      <span>02</span>MEET YOUR CREW
+    </h5>
+    <div class="content-grid crew flex align-stretch justify-between">
+      <div class="content-block crew flex column">
+        <div
+          class="flex column justify-center"
+          style="gap: 2.5rem; flex-grow: 1"
+        >
+          <div class="flex column">
+            <h4 class="content-role fs-4 ff-bellefair uppercase text-white"></h4>
+            <h3 class="content-name fs-3 ff-bellefair uppercase text-white"></h3>
+          </div>
+          <p class="content-bio fs-9 ff-barlow text-light"></p>
+        </div>
+        <div class="small-pagination-container flex">
+          ${data.destinations
+            .map((element) => `<div class="small-pagination bg-white"></div>`)
+            .join("")}
+        </div>
+      </div>
+      <div class="content-image crew flex justify-center align-end">
+        <img src="" />
+      </div>
     </div>
-  `;
+  </div>`;
+}
+
+function updateCrew(index) {
+  const element = data.crew[index];
+
+  document.querySelector("#contentCrew .content-image > img").src =
+    "." + element.images.webp;
+  document.querySelector("#contentCrew .content-name").textContent =
+    element.name;
+  document.querySelector("#contentCrew .content-role").textContent =
+    element.role;
+  document.querySelector("#contentCrew .content-bio").textContent = element.bio;
 }
 
 // ✅ Technology template
@@ -264,7 +260,7 @@ function loadTechnology() {
 // ✅ Inject correct content depending on which container exists
 if (destinationParent) {
   // Step 1: Render layout once
-  destinationParent.innerHTML = loadDestinationContent(defaultIndex);
+  destinationParent.innerHTML = loadDestinationContent();
 
   // Step 2: Load default content
   updateDestination(defaultIndex);
@@ -283,7 +279,25 @@ if (destinationParent) {
     });
   });
 } else if (crewParent) {
-  crewParent.innerHTML = loadCrew();
+  // Step 1: Render layout once
+  crewParent.innerHTML = loadCrewContent();
+
+  // Step 2: Load default content
+  updateCrew(defaultIndex);
+
+  // Step 3: Add active class to default tab
+  var smallPagination = document.querySelectorAll(".small-pagination");
+  smallPagination[defaultIndex].classList.add("active");
+
+  smallPagination.forEach((element, index) => {
+    element.addEventListener("click", (event) => {
+      smallPagination.forEach((element, index) => {
+        element.classList.remove("active");
+      });
+      element.classList.add("active");
+      updateCrew(index);
+    });
+  });
 } else if (technologyParent) {
   technologyParent.innerHTML = loadTechnology();
 }

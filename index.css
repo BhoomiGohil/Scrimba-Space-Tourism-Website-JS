@@ -399,6 +399,7 @@ select {
   text-decoration: none;
   border-bottom: 0.188rem solid transparent;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .tabs-menu:hover {
@@ -438,6 +439,7 @@ select {
   height: 0.938rem;
   border-radius: 100%;
   opacity: 17.44%;
+  cursor: pointer;
 }
 
 .small-pagination:hover {
@@ -448,7 +450,7 @@ select {
   opacity: 17.44%;
 }
 
-.small-pagination:active {
+.small-pagination.active {
   opacity: 100%;
 }
 
