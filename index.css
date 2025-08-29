@@ -475,7 +475,7 @@ select {
   border: 0.063rem solid hsl(var(--clr-white) / 0.25);
 }
 
-.large-pagination:active {
+.large-pagination.active {
   color: hsl(var(--clr-dark));
   background-color: hsl(var(--clr-white));
   border-color: hsl(var(--clr-white));
@@ -518,7 +518,8 @@ select {
 }
 
 .content.technology {
-  width: 91.688rem;
+  width: 94.688rem;
+  margin: 0rem 0rem 0rem 3rem;
 }
 
 /**********************/

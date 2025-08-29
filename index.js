@@ -201,60 +201,58 @@ function updateCrew(index) {
 }
 
 // ✅ Technology template
-function loadTechnology() {
+function loadTechnologyContent() {
   return `
-    <div class="content technology flex column justify-center">
-      <h5 class="numbered-title">
-        <span>03</span> Space Launch 101
-      </h5>
-      ${data.technology
-        .map((element) => {
-          return `
-              <div class="content-image technology-mobile flex">
-                <img
-                  src="${"." + element.images.landscape}"
-                  style="width: 100%; height: 100%"
-                />
-              </div>
-              <div class="content-grid technology flex align-center justify-between">
-                <div class="content-block-container flex">
-                  <div class="large-pagination-container flex column">
-                    ${data.technology
-                      .map(
-                        (element, index) =>
-                          `<div
-                            class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
-                          >
-                          ${index + 1}
-                          </div>`
-                      )
-                      .join("")}
-                  </div>
-                  <div class="content-block technology flex column justify-center">
-                    <h4 class="fs-4 ff-bellefair uppercase text-light">
-                      THE TERMINOLOGY…
-                    </h4>
-                    <div class="flex column">
-                      <h3 class="fs-3 ff-bellefair uppercase text-white">
-                        ${element.name}
-                      </h3>
-                      <p class="fs-9 ff-barlow text-light">
-                        ${element.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="content-image technology flex">
-                  <img
-                    src="${"." + element.images.portrait}"
-                    style="width: 100%; height: 100%"
-                  />
-                  </div>
-                </div>`;
-        })
-        .join("")}
+  <div class="content technology flex column justify-center">
+    <h5 class="numbered-title">
+      <span>03</span> Space Launch 101
+    </h5>
+    <div class="content-image technology-mobile flex">
+      <img src="" style="width: 100%; height: 100%" />
+    </div>
+    <div class="content-grid technology flex align-center justify-between">
+      <div class="content-block-container flex">
+        <div class="large-pagination-container flex column">
+          ${data.technology
+            .map(
+              (element, index) =>
+                `<div class="large-pagination fs-4 ff-bellefair flex justify-center align-center">
+                  ${index + 1}
+                </div>`
+            )
+            .join("")}
+        </div>
+        <div class="content-block technology flex column justify-center">
+          <h4 class="fs-4 ff-bellefair uppercase text-light">
+            THE TERMINOLOGY…
+          </h4>
+          <div class="flex column">
+            <h3 class="content-name fs-3 ff-bellefair uppercase text-white"></h3>
+            <p class="content-description fs-9 ff-barlow text-light"></p>
+          </div>
+        </div>
+      </div>
+      <div class="content-image technology flex">
+        <img src="" style="width: 100%; height: 100%" />
+      </div>
     </div>
   </div>`;
+}
+
+function updateTechnology(index) {
+  var element = data.technology[index];
+
+  document.querySelector(
+    "#contentTechnology .content-image.technology > img"
+  ).src = "." + element.images.portrait;
+  document.querySelector("#contentTechnology .content-name").textContent =
+    element.name;
+  document.querySelector(
+    "#contentTechnology .content-description"
+  ).textContent = element.description;
+  document.querySelector(
+    "#contentTechnology .content-image.technology-mobile > img"
+  ).src = "." + element.images.landscape;
 }
 
 // ✅ Inject correct content depending on which container exists
@@ -299,5 +297,23 @@ if (destinationParent) {
     });
   });
 } else if (technologyParent) {
-  technologyParent.innerHTML = loadTechnology();
+  // Step 1: Render layout once
+  technologyParent.innerHTML = loadTechnologyContent();
+
+  // Step 2: Load default content
+  updateTechnology(defaultIndex);
+
+  // Step 3: Add active class to default tab
+  var largePagination = document.querySelectorAll(".large-pagination");
+  largePagination[defaultIndex].classList.add("active");
+
+  largePagination.forEach((element, index) => {
+    element.addEventListener("click", () => {
+      largePagination.forEach((element, index) => {
+        element.classList.remove("active");
+      });
+      element.classList.add("active");
+      updateTechnology(index);
+    });
+  });
 }
