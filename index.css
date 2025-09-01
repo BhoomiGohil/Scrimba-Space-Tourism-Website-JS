@@ -569,6 +569,7 @@ select {
 }
 
 .content-image.technology-mobile {
+  width: 100%;
   display: none;
   grid-column: 1 / 5;
 }
@@ -693,12 +694,11 @@ select {
       minmax(2rem, 1fr);
     justify-items: center;
     text-align: center;
-    padding: 0rem;
   }
 
   .content-grid.index {
     gap: 4.125rem;
-    padding: 0rem;
+    padding: 3rem 0rem 3rem 0rem;
   }
 
   .content-grid.technology {
@@ -935,11 +935,11 @@ select {
       minmax(2rem, 1fr);
     justify-items: center;
     text-align: center;
-    text-align: center;
   }
 
   .content-grid.index {
     gap: 0rem;
+    padding: 3rem 0rem 3rem 0rem;
   }
 
   .content-grid.technology {
