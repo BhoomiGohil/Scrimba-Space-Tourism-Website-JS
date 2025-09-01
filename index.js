@@ -65,9 +65,7 @@ if (navigationParent) {
 // ✅ Home content
 function home() {
   return `
-    <div class="content index flex justify-center align-end">
-      <div class="content-grid index flex justify-between">
-        <div class="content-block index flex column">
+      <div class="content-block index flex column">
           <h5 class="fs-5 ff-barlow-cond letter-spacing-4 uppercase text-light">
             So, you want to travel to
           </h5>
@@ -79,14 +77,13 @@ function home() {
             world experience!
           </p>
         </div>
-        <div class="content-button index flex align-self">
-          <a class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase">
+        <div class="content-button index flex column align-end">
+          <a
+            class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
+          >
             Explore
           </a>
-        </div>
-      </div>
-    </div>
-  `;
+        </div>`;
 }
 
 if (homeParent) {
@@ -96,11 +93,9 @@ if (homeParent) {
 // ✅ Destination template
 function loadDestinationContent() {
   return `
-  <div class="content destination flex column justify-center">
-    <h5 class="numbered-title">
+    <h5 class="numbered-title"  style="grid-column: 2/4">
       <span>01</span> PICK YOUR DESTINATION
     </h5>
-    <div class="content-grid destination flex align-center justify-between">
       <div class="content-image destination flex">
         <img src="" style="width: 100%; height: 100%" />
       </div>
@@ -135,8 +130,6 @@ function loadDestinationContent() {
             <h6 class="content-travel fs-6 ff-bellefair text-white uppercase"></h6>
           </div>
         </div>
-      </div>
-    </div>
   </div>`;
 }
 
@@ -159,11 +152,9 @@ function updateDestination(index) {
 // ✅ Crew template
 function loadCrewContent() {
   return `
-  <div class="content crew flex column justify-center">
-    <h5 class="numbered-title">
+  <h5 class="numbered-title"  style="grid-column: 2/4">
       <span>02</span>MEET YOUR CREW
     </h5>
-    <div class="content-grid crew flex align-stretch justify-between">
       <div class="content-block crew flex column">
         <div
           class="flex column justify-center"
@@ -183,8 +174,6 @@ function loadCrewContent() {
       </div>
       <div class="content-image crew flex justify-center align-end">
         <img src="" />
-      </div>
-    </div>
   </div>`;
 }
 
@@ -203,14 +192,12 @@ function updateCrew(index) {
 // ✅ Technology template
 function loadTechnologyContent() {
   return `
-  <div class="content technology flex column justify-center">
-    <h5 class="numbered-title">
+    <h5 class="numbered-title"  style="grid-column: 2/4">
       <span>03</span> Space Launch 101
     </h5>
     <div class="content-image technology-mobile flex">
       <img src="" style="width: 100%; height: 100%" />
     </div>
-    <div class="content-grid technology flex align-center justify-between">
       <div class="content-block-container flex">
         <div class="large-pagination-container flex column">
           ${data.technology
@@ -234,8 +221,7 @@ function loadTechnologyContent() {
       </div>
       <div class="content-image technology flex">
         <img src="" style="width: 100%; height: 100%" />
-      </div>
-    </div>
+      
   </div>`;
 }
 
