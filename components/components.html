@@ -434,10 +434,7 @@
             <!-- **************************** Start Whole Navigation Component **************************** -->
             <div class="navigation flex-between-center">
               <img src="../assets/shared/logo.svg" class="logo" />
-              <div
-                class="navigation-divider divider-white"
-                style="--o: 25%; z-index: 1"
-              ></div>
+              <div class="navigation-divider"></div>
               <input type="checkbox" id="navigation-mobile-menu-button" />
               <label
                 for="navigation-mobile-menu-button"
@@ -490,18 +487,16 @@
             style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
           >
             <div
-              class="navigation tablet flex-between-center"
-              style="margin: 0rem; padding: 0; gap: 2.5rem"
+              class="navigation flex-between-center"
+              style="
+                margin: 0rem;
+                padding-top: 0;
+                padding-left: 2.5rem;
+                gap: 2.5rem;
+              "
             >
-              <img
-                class="logo"
-                src="../assets/shared/logo.svg"
-                alt="Logo of the site"
-              />
-              <div
-                class="navigation-divider tablet divider-white"
-                style="display: none"
-              ></div>
+              <img src="../assets/shared/logo.svg" class="logo" />
+              <div class="navigation-divider" style="display: none"></div>
               <input type="checkbox" id="navigation-mobile-menu-button" />
               <label
                 for="navigation-mobile-menu-button"
@@ -509,37 +504,33 @@
               >
               </label>
               <div
-                class="navigation-menu-container tablet flex-align-center"
-                style="
-                  justify-content: end;
-                  flex-grow: 1;
-                  padding: 0 2.5rem 0 2.5rem;
-                "
+                class="navigation-menu-container flex-align-center"
+                style="justify-content: end; flex-grow: 1; padding: 0 2.5rem"
               >
                 <a
-                  class="navigation-menu active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  class="navigation-menu active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../index.html"
                 >
                   <span class="bold letter-spacing-207"> 00 </span>
                   Home
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
-                  href="../index.html"
+                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/destination-moon.html"
                 >
                   <span class="bold letter-spacing-207"> 01 </span>
                   Destination
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
-                  href="../index.html"
+                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/crew-commander.html"
                 >
                   <span class="bold letter-spacing-207"> 02 </span>
                   Crew
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
-                  href="../index.html"
+                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/technology-vehicle.html"
                 >
                   <span class="bold letter-spacing-207"> 03 </span>
                   Technology
@@ -547,97 +538,103 @@
               </div>
             </div>
           </div>
+
           <div
             class="flex column border-light"
-            style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
+            style="height: auto; padding: 0 1.5rem"
           >
             <div
-              class="navigation mobile flex-between-center"
-              style="height: auto; padding: 0 1.5rem"
+              class="navigation flex-between-center"
+              style="height: auto; padding: 1.5rem"
             >
               <img
-                class="logo mobile"
                 src="../assets/shared/logo.svg"
-                alt="Logo of the site"
+                class="logo mobile"
                 style="width: 2.5rem; height: 2.5rem"
               />
               <div
-                class="navigation-divider mobile divider-white"
+                class="navigation-divider mobile"
                 style="display: none"
               ></div>
               <input type="checkbox" id="navigation-mobile-menu-button" />
               <label
                 for="navigation-mobile-menu-button"
                 class="navigation-mobile-menu"
+                style="right: 2rem; display: flex"
               >
               </label>
               <div
                 class="navigation-menu-container mobile flex"
                 style="
                   width: 80%;
+                  height: 100vh;
+                  display: none;
                   flex-direction: column;
-                  padding: 2rem 0 2rem 2rem;
                   gap: 2rem;
+                  padding: 7rem 0 2rem 2rem;
+                  position: fixed;
+                  top: 0;
+                  right: 0;
+                  z-index: 100;
                 "
               >
                 <a
-                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  class="navigation-menu mobile active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../index.html"
                   style="
                     width: 100%;
                     height: auto;
                     border-bottom: none;
                     border-top: none;
+                    border-right: 0.188rem solid transparent;
                   "
                 >
                   <span class="bold letter-spacing-207"> 00 </span>
                   Home
                 </a>
                 <a
-                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
-                  href="../index.html"
+                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/destination-moon.html"
                   style="
                     width: 100%;
                     height: auto;
                     border-bottom: none;
                     border-top: none;
+                    border-right: 0.188rem solid transparent;
                   "
                 >
                   <span class="bold letter-spacing-207"> 01 </span>
                   Destination
                 </a>
                 <a
-                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
-                  href="../index.html"
+                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/crew-commander.html"
                   style="
                     width: 100%;
                     height: auto;
                     border-bottom: none;
                     border-top: none;
+                    border-right: 0.188rem solid transparent;
                   "
                 >
                   <span class="bold letter-spacing-207"> 02 </span>
                   Crew
                 </a>
                 <a
-                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase"
-                  href="../index.html"
+                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  href="../html/technology-vehicle.html"
                   style="
                     width: 100%;
                     height: auto;
                     border-bottom: none;
                     border-top: none;
+                    border-right: 0.188rem solid transparent;
                   "
                 >
                   <span class="bold letter-spacing-207"> 03 </span>
                   Technology
                 </a>
               </div>
-              <img
-                src="../assets/shared/icon-hamburger.svg"
-                class="navigation-mobile-menu mobile"
-                style="display: block"
-              />
             </div>
           </div>
 
