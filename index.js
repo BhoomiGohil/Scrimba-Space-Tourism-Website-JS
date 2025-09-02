@@ -17,8 +17,7 @@ function loadNav() {
   <div class="navigation flex-between-center">
     <img src="../assets/shared/logo.svg" class="logo" />
     <div
-      class="navigation-divider divider-white"
-      style="--o: 25%; z-index: 1"
+      class="navigation-divider"
     ></div>
     <input type="checkbox" id="navigation-mobile-menu-button" />
     <label
