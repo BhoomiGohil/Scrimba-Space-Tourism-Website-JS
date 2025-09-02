@@ -6,7 +6,6 @@ const data = await response.json();
 var defaultIndex = 0;
 
 var navigationParent = document.querySelector("#navigation");
-
 var homeParent = document.querySelector("#home");
 var destinationParent = document.querySelector("#contentDestination");
 var crewParent = document.querySelector("#contentCrew");
@@ -15,7 +14,7 @@ var technologyParent = document.querySelector("#contentTechnology");
 // ✅ Navigation builder
 function loadNav() {
   return `
-  <div class="navigation flex align-center justify-between">
+  <div class="navigation flex-between-center">
     <img src="../assets/shared/logo.svg" class="logo" />
     <div
       class="navigation-divider divider-white"
@@ -26,18 +25,17 @@ function loadNav() {
       for="navigation-mobile-menu-button"
       class="navigation-mobile-menu"
     ></label>
-    <div class="navigation-menu-container flex align-center">
+    <div class="navigation-menu-container flex-align-center">
       ${data.navItems
         .map(
           (element, index) =>
             `
                 <a
-                    class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                    class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                     href="${element.url}"
                 >
-                    <span class="bold letter-spacing-207"> ${String(
-                      index
-                    ).padStart(2, "0")} 
+                    <span class="bold letter-spacing-207"> 
+                      ${String(index).padStart(2, "0")} 
                     </span> 
                     ${element.name}
                 </a>
@@ -65,7 +63,7 @@ if (navigationParent) {
 // ✅ Home content
 function home() {
   return `
-      <div class="content-block index flex column">
+        <div class="content-block index flex column">
           <h5 class="fs-5 ff-barlow-cond letter-spacing-4 uppercase text-light">
             So, you want to travel to
           </h5>
@@ -77,13 +75,14 @@ function home() {
             world experience!
           </p>
         </div>
-        <div class="content-button index flex column align-end">
+        <div class="content-button index flex-justify-end">
           <a
-            class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
+            class="button flex-center-center bg-white fs-4 ff-bellefair text-dark uppercase"
           >
             Explore
           </a>
-        </div>`;
+        </div>
+      `;
 }
 
 if (homeParent) {
@@ -93,14 +92,17 @@ if (homeParent) {
 // ✅ Destination template
 function loadDestinationContent() {
   return `
-    <h5 class="numbered-title"  style="grid-column: 2/4">
-      <span>01</span> PICK YOUR DESTINATION
-    </h5>
-      <div class="content-image destination flex">
-        <img src="" style="width: 100%; height: 100%" />
-      </div>
-      <div class="content-block destination flex column justify-center">
-        <div class="tabs-menu-container flex align-center">
+        <h5 class="numbered-title" style="grid-column: 2/4">
+          <span>01</span> PICK YOUR DESTINATION
+        </h5>
+        <div class="content-image destination">
+          <img
+            src=""
+            style="width: 100%; height: 100%"
+          />
+        </div>
+        <div class="content-block destination column">
+          <div class="tabs-menu-container">
           ${data.destinations
             .map(
               (element) =>
@@ -110,26 +112,30 @@ function loadDestinationContent() {
                 </div>`
             )
             .join("")}
-        </div>
-        <div class="flex column">
-          <h1 class="content-name fs-2 ff-bellefair uppercase text-white"></h1>
-          <p class="content-description fs-9 ff-barlow text-light"></p>
-        </div>
-        <div class="divider-white" style="--o: 25%"></div>
-        <div class="grid align-center" style="grid-template-columns: 1fr 1fr">
-          <div class="flex column" style="gap: 0.75rem">
-            <p class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase">
-              AVG. DISTANCE
-            </p>
-            <h6 class="content-distance fs-6 ff-bellefair text-white uppercase"></h6>
           </div>
-          <div class="flex column" style="gap: 0.75rem">
-            <p class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase">
-              Est. travel time
-            </p>
-            <h6 class="content-travel fs-6 ff-bellefair text-white uppercase"></h6>
+          <div class="flex column">
+            <h1 class="content-name fs-2 ff-bellefair uppercase text-white"></h1>
+            <p class="content-description fs-9 ff-barlow text-light"></p>
           </div>
-        </div>
+          <div class="divider-white" style="--o: 25%"></div>
+          <div class="grid" style="grid-template-columns: 1fr 1fr">
+            <div class="flex column" style="gap: 0.75rem">
+              <p
+                class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase"
+              >
+                AVG. DISTANCE
+              </p>
+              <h6 class="content-distance fs-6 ff-bellefair text-white uppercase"></h6>
+            </div>
+            <div class="flex column" style="gap: 0.75rem">
+              <p
+                class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase"
+              >
+                Est. travel time
+              </p>
+              <h6 class="content-travel fs-6 ff-bellefair text-white uppercase"></h6>
+            </div>
+          </div>
   </div>`;
 }
 
@@ -152,29 +158,29 @@ function updateDestination(index) {
 // ✅ Crew template
 function loadCrewContent() {
   return `
-  <h5 class="numbered-title"  style="grid-column: 2/4">
-      <span>02</span>MEET YOUR CREW
-    </h5>
-      <div class="content-block crew flex column">
-        <div
-          class="flex column justify-center"
-          style="gap: 2.5rem; flex-grow: 1"
-        >
-          <div class="flex column">
-            <h4 class="content-role fs-4 ff-bellefair uppercase text-white"></h4>
-            <h3 class="content-name fs-3 ff-bellefair uppercase text-white"></h3>
+        <h5 class="numbered-title" style="grid-column: 2/4">
+          <span>02</span>MEET YOUR CREW
+        </h5>
+        <div class="content-block crew column">
+          <div
+            class="flex-justify-center column"
+            style="gap: 2.5rem; flex-grow: 1"
+          >
+            <div class="flex column">
+              <h4 class="content-role fs-4 ff-bellefair uppercase text-white"></h4>
+              <h3 class="content-name fs-3 ff-bellefair uppercase text-white"></h3>
+            </div>
+            <p class="content-bio fs-9 ff-barlow text-light"></p>
           </div>
-          <p class="content-bio fs-9 ff-barlow text-light"></p>
+          <div class="small-pagination-container flex">
+           ${data.destinations
+             .map((element) => `<div class="small-pagination bg-white"></div>`)
+             .join("")}
+          </div>
         </div>
-        <div class="small-pagination-container flex">
-          ${data.destinations
-            .map((element) => `<div class="small-pagination bg-white"></div>`)
-            .join("")}
-        </div>
-      </div>
-      <div class="content-image crew flex justify-center align-end">
-        <img src="" />
-  </div>`;
+        <div class="content-image crew">
+          <img src="" />
+        </div>`;
 }
 
 function updateCrew(index) {
@@ -192,36 +198,38 @@ function updateCrew(index) {
 // ✅ Technology template
 function loadTechnologyContent() {
   return `
-    <h5 class="numbered-title"  style="grid-column: 2/4">
-      <span>03</span> Space Launch 101
-    </h5>
-    <div class="content-image technology-mobile flex">
-      <img src="" style="width: 100%; height: 100%" />
-    </div>
-      <div class="content-block-container flex">
-        <div class="large-pagination-container flex column">
+        <h5 class="numbered-title" style="grid-column: 2/4">
+          <span>03</span> Space Launch 101
+        </h5>
+        <div class="content-image technology-mobile flex">
+          <img
+            src=""
+            style="width: 100%; height: 100%"
+          />
+        </div>
+        <div class="content-block-container flex">
+          <div class="large-pagination-container flex-between-center column">
           ${data.technology
             .map(
               (element, index) =>
-                `<div class="large-pagination fs-4 ff-bellefair flex justify-center align-center">
+                `<div class="large-pagination fs-4 ff-bellefair flex-center-center">
                   ${index + 1}
                 </div>`
             )
             .join("")}
         </div>
-        <div class="content-block technology flex column justify-center">
-          <h4 class="fs-4 ff-bellefair uppercase text-light">
-            THE TERMINOLOGY…
-          </h4>
-          <div class="flex column">
-            <h3 class="content-name fs-3 ff-bellefair uppercase text-white"></h3>
-            <p class="content-description fs-9 ff-barlow text-light"></p>
+        <div class="content-block technology flex column">
+            <h4 class="fs-4 ff-bellefair uppercase text-light">
+              THE TERMINOLOGY…
+            </h4>
+            <div class="flex column">
+              <h3 class="content-name fs-3 ff-bellefair uppercase text-white"></h3>
+              <p class="content-description fs-9 ff-barlow text-light"></p>
+            </div>
           </div>
-        </div>
       </div>
       <div class="content-image technology flex">
         <img src="" style="width: 100%; height: 100%" />
-      
   </div>`;
 }
 

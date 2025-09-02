@@ -129,45 +129,59 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.column {
+  flex-direction: column;
+}
+
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-end {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-justify-end {
+  display: flex;
+  justify-content: end;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-align-end {
+  display: flex;
+  align-items: end;
+}
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
 }
 
-.column {
-  flex-direction: column;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-end {
-  justify-content: end;
-}
-
-.justify-self {
-  justify-self: center;
-}
-
-.align-center {
+.grid-align-center {
   align-items: center;
 }
 
-.align-stretch {
-  align-items: stretch;
-}
-
-.align-end {
+.grid-align-end {
   align-items: end;
-}
-
-.align-self {
-  align-self: center;
 }
 
 .wrap {
@@ -384,6 +398,7 @@ select {
 }
 
 .tabs-menu-container {
+  display: flex;
   gap: 2rem;
 }
 
@@ -424,7 +439,7 @@ select {
 }
 
 .small-pagination-container {
-  gap: 3.375rem;
+  gap: 2.5rem;
 }
 
 .small-pagination {
@@ -496,7 +511,7 @@ select {
   grid-template-columns:
     minmax(2rem, 1fr) repeat(2, minmax(0rem, 34.6875rem))
     minmax(2rem, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: auto 1fr;
   gap: 2rem;
   padding: 3rem 0rem 3rem 0rem;
 }
@@ -507,7 +522,7 @@ select {
 
 .content-grid.technology {
   grid-template-columns:
-    minmax(2rem, 1fr) minmax(0rem, 45.688rem) minmax(0rem, 23.687rem)
+    minmax(2rem, 1fr) minmax(0rem, 47.688rem) minmax(0rem, 21.687rem)
     minmax(2rem, 1fr);
 }
 
@@ -523,6 +538,7 @@ select {
 }
 
 .content-block {
+  display: flex;
   gap: 2.5rem;
   grid-column: 2;
 }
@@ -530,10 +546,6 @@ select {
 .content-block.index,
 .content-block.technology {
   gap: 1.5rem;
-}
-
-.content-block.crew {
-  align-self: stretch;
 }
 
 .content-block.destination {
@@ -554,6 +566,7 @@ select {
   width: 85%;
   grid-column: 3;
   justify-self: center;
+  align-self: end;
 }
 
 .content-image.destination {
@@ -638,11 +651,20 @@ select {
 
   .small-pagination-container {
     justify-content: center;
+    gap: 1rem;
   }
 
   .small-pagination {
     width: 0.625rem;
     height: 0.625rem;
+  }
+
+  /* ------------------ */
+  /* Main               */
+  /* ------------------ */
+
+  .main {
+    align-items: start;
   }
 
   /* ------------------ */
@@ -882,11 +904,20 @@ select {
 
   .small-pagination-container {
     justify-content: center;
+    gap: 1rem;
   }
 
   .small-pagination {
     width: 0.625rem;
     height: 0.625rem;
+  }
+
+  /* ------------------ */
+  /* Main               */
+  /* ------------------ */
+
+  .main {
+    align-items: start;
   }
 
   /* ------------------ */
