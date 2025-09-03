@@ -354,24 +354,29 @@ select {
   z-index: 1;
 }
 
-#navigation-mobile-menu-button {
-  display: none;
-}
-
 .navigation-mobile-menu {
   width: 24px;
   height: 24px;
   display: none;
-  position: absolute;
-  right: 4rem;
-  z-index: 101;
   cursor: pointer;
   background-image: url(./assets/shared/icon-hamburger.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
+.navigation-mobile-menu-close {
+  width: 24px;
+  height: 24px;
+  margin-right: 2rem;
+  display: none;
+  cursor: pointer;
+  background-image: url(./assets/shared/icon-close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .navigation-menu-container {
+  display: flex;
   padding: 0 4rem 0 6rem;
   gap: 3rem;
   background-color: hsl(var(--clr-white) / 0.05);
@@ -846,8 +851,9 @@ select {
     height: 100vh;
     display: none;
     flex-direction: column;
+    align-items: end;
     gap: 2rem;
-    padding: 7rem 0 2rem 2rem;
+    padding: 2rem 0 2rem 2rem;
     position: fixed;
     top: 0;
     right: 0;
@@ -866,17 +872,9 @@ select {
     border-right-color: hsl(var(--clr-white));
   }
 
-  .navigation-mobile-menu {
-    right: 2rem;
+  .navigation-mobile-menu,
+  .navigation-mobile-menu-close {
     display: flex;
-  }
-
-  #navigation-mobile-menu-button:checked ~ .navigation-menu-container {
-    display: flex;
-  }
-
-  #navigation-mobile-menu-button:checked ~ .navigation-mobile-menu {
-    background-image: url(./assets/shared/icon-close.svg);
   }
 
   .tabs-menu-container {

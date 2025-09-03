@@ -6,6 +6,7 @@ const data = await response.json();
 var defaultIndex = 0;
 
 var navigationParent = document.querySelector("#navigation");
+
 var homeParent = document.querySelector("#home");
 var destinationParent = document.querySelector("#contentDestination");
 var crewParent = document.querySelector("#contentCrew");
@@ -17,14 +18,15 @@ function loadNav() {
   <div class="navigation flex-between-center">
     <img src="../assets/shared/logo.svg" class="logo" />
     <div
-      class="navigation-divider"
-    ></div>
-    <input type="checkbox" id="navigation-mobile-menu-button" />
-    <label
-      for="navigation-mobile-menu-button"
-      class="navigation-mobile-menu"
-    ></label>
-    <div class="navigation-menu-container flex-align-center">
+      class="navigation-divider divider-white">
+    </div>
+    <div
+        class="navigation-mobile-menu">
+    </div>
+    <div class="navigation-menu-container">
+      <div
+        class="navigation-mobile-menu-close">
+      </div>
       ${data.navItems
         .map(
           (element, index) =>
@@ -58,6 +60,31 @@ if (navigationParent) {
     }
   });
 }
+
+var menu = document.querySelector(".navigation-menu-container");
+var mobileMenu = document.querySelector(".navigation-mobile-menu");
+var mobileCloseMenu = document.querySelector(".navigation-mobile-menu-close");
+
+function menuCloseOpen() {
+  if (window.innerWidth <= 735) {
+    menu.style.display = "none";
+    mobileMenu.addEventListener("click", (element) => {
+      menu.style.display = "flex";
+    });
+
+    mobileCloseMenu.addEventListener("click", (element) => {
+      menu.style.display = "none";
+    });
+  } else if (window.innerWidth >= 736) {
+    menu.style.display = "flex";
+  }
+}
+
+menuCloseOpen();
+
+window.addEventListener("resize", () => {
+  menuCloseOpen();
+});
 
 // ✅ Home content
 function home() {
@@ -206,7 +233,7 @@ function loadTechnologyContent() {
             style="width: 100%; height: 100%"
           />
         </div>
-        <div class="content-block-container flex">
+        <div class="content-block-container flex-align-center">
           <div class="large-pagination-container flex-between-center column">
           ${data.technology
             .map(
