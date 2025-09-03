@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Bellefair";
+  src: url("./fonts/Bellefair-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("./fonts/BarlowCondensed-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("./fonts/BarlowCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("./fonts/Barlow-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* ------------------ */
 /* Custom Properties  */
 /* ------------------ */
@@ -723,6 +751,7 @@ select {
       minmax(2rem, 1fr);
     justify-items: center;
     text-align: center;
+    gap: 2rem;
   }
 
   .content-grid.index {
@@ -962,10 +991,11 @@ select {
 
   .content-grid {
     grid-template-columns:
-      minmax(2rem, 1fr) 10fr
-      minmax(2rem, 1fr);
+      minmax(1rem, 1fr) 10fr
+      minmax(1rem, 1fr);
     justify-items: center;
     text-align: center;
+    gap: 1rem;
   }
 
   .content-grid.index {
@@ -975,8 +1005,8 @@ select {
 
   .content-grid.technology {
     grid-template-columns:
-      minmax(2rem, 1fr) 10fr
-      minmax(2rem, 1fr);
+      minmax(1rem, 1fr) 10fr
+      minmax(1rem, 1fr);
   }
 
   /**********************/
