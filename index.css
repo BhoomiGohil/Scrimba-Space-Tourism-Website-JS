@@ -37,15 +37,32 @@
   --clr-white: 0 0% 100%;
 
   /* Font sizes */
-  --fs-1: 9rem;
-  --fs-2: 6rem;
-  --fs-3: 3.5rem;
-  --fs-4: 2rem;
-  --fs-5: 1.75rem;
-  --fs-6: 1.75rem;
+  /* fs-1: 5rem → 9rem */
+  --fs-1: clamp(5rem, 6vw + 1rem, 9rem);
+
+  /* fs-2: 3.5rem → 6rem */
+  --fs-2: clamp(3.5rem, 5vw + 1rem, 6rem);
+
+  /* fs-3: 1.5rem → 3.5rem */
+  --fs-3: clamp(1.5rem, 3vw + 1rem, 3.5rem);
+
+  /* fs-4: 1.125rem → 2rem */
+  --fs-4: clamp(1.125rem, 2vw + 0.5rem, 2rem);
+
+  /* fs-5: 1.25rem → 1.75rem */
+  --fs-5: clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem);
+
+  /* fs-6: 1rem → 1.75rem */
+  --fs-6: clamp(1rem, 2vw + 0.25rem, 1.75rem);
+
+  /* fs-7: stays fixed */
   --fs-7: 0.875rem;
-  --fs-8: 1rem;
-  --fs-9: 1.125rem;
+
+  /* fs-8: 0.875rem → 1rem */
+  --fs-8: clamp(0.875rem, 1vw + 0.25rem, 1rem);
+
+  /* fs-9: 0.938rem → 1.125rem */
+  --fs-9: clamp(0.938rem, 1vw + 0.25rem, 1.125rem);
 
   /* Font sizes Tablet */
   --fs-2-tl: 5rem;
@@ -444,14 +461,16 @@ select {
   border-bottom: 0.188rem solid transparent;
   gap: 0.5rem;
   cursor: pointer;
+  color: hsl(var(--clr-light));
 }
 
 .tabs-menu:hover {
   border-color: hsl(var(--clr-white) / 0.5);
+  color: hsl(var(--clr-white));
 }
 
 .tabs-menu:visited {
-  color: inherit;
+  color: hsl(var(--clr-light));
 }
 
 .tabs-menu.active {
@@ -633,22 +652,6 @@ select {
 }
 
 @media (min-width: 736px) and (max-width: 832px) {
-  .fs-2 {
-    font-size: var(--fs-2-tl);
-  }
-  .fs-3 {
-    font-size: var(--fs-3-tl);
-  }
-  .fs-4 {
-    font-size: var(--fs-4-tl);
-  }
-  .fs-5 {
-    font-size: var(--fs-5-tl);
-  }
-  .fs-9 {
-    font-size: var(--fs-9-tl);
-  }
-
   .numbered-title {
     grid-column: 1 / 4 !important;
   }
@@ -826,31 +829,6 @@ select {
 }
 
 @media (min-width: 0px) and (max-width: 735px) {
-  .fs-1 {
-    font-size: var(--fs-1-mb);
-  }
-  .fs-2 {
-    font-size: var(--fs-2-mb);
-  }
-  .fs-3 {
-    font-size: var(--fs-3-mb);
-  }
-  .fs-4 {
-    font-size: var(--fs-4-mb);
-  }
-  .fs-5 {
-    font-size: var(--fs-6-mb);
-  }
-  .fs-6 {
-    font-size: var(--fs-6-mb);
-  }
-  .fs-8 {
-    font-size: var(--fs-8-mb);
-  }
-  .fs-9 {
-    font-size: var(--fs-9-mb);
-  }
-
   .numbered-title {
     font-size: var(--fs-6);
     text-align: center;
