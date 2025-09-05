@@ -133,14 +133,14 @@ function loadDestinationContent() {
             .map(
               (element) =>
                 `<div 
-                    class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white">
+                    class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase">
                     ${element.name}
                 </div>`
             )
             .join("")}
           </div>
           <div class="flex column">
-            <h1 class="content-name fs-2 ff-bellefair uppercase text-white"></h1>
+            <h2 class="content-name fs-2 ff-bellefair uppercase text-white"></h2>
             <p class="content-description fs-9 ff-barlow text-light"></p>
           </div>
           <div class="divider-white" style="--o: 25%"></div>
