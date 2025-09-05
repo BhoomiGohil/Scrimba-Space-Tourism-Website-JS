@@ -13,21 +13,96 @@
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../components/components.css" />
     <style>
+      .logo.mobile {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .navigation.tablet {
+        margin: 0rem;
+        padding-top: 0;
+        padding-left: 2.5rem;
+        gap: 2.5rem;
+      }
+
+      .navigation-divider.tablet {
+        display: none;
+      }
+
+      .navigation-menu-container.tablet {
+        justify-content: end;
+        flex-grow: 1;
+        padding: 0 2.5rem;
+      }
+
+      .navigation.mobile {
+        height: auto;
+        padding: 1.5rem;
+      }
+
+      .navigation-divider.mobile {
+        display: none;
+      }
+
+      .navigation-menu-container.mobile {
+        width: 80%;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 7rem 0 2rem 2rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100;
+      }
+
       .navigation-menu.mobile {
+        width: 100%;
+        height: auto;
+        border-bottom: none;
+        border-top: none;
         border-right: 0.188rem solid transparent;
       }
 
-      .navigation-menu.mobile:hover {
+      .navigation-mobile-menu.mobile {
+        right: 2rem;
+        display: flex;
+      }
+
+      .navigation-menu.mobile:hover,
+      .navigation-menu.mobile.hover {
         border-right-color: hsl(var(--clr-white) / 0.5);
       }
 
-      .navigation-menu.mobile:active {
+      .navigation-menu.mobile.active {
         border-right-color: hsl(var(--clr-white));
       }
 
+      .button.mobile {
+        width: 9rem;
+        height: 9rem;
+      }
+
       .button.mobile:hover,
+      .button.mobile.hover,
       .button.mobile:focus {
         box-shadow: 0 0 0 4rem hsl(var(--clr-white) / 0.1);
+      }
+
+      .small-pagination.tablet {
+        width: 0.625rem;
+        height: 0.625rem;
+      }
+
+      .large-pagination.tablet {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      .large-pagination.mobile {
+        width: 2.5rem;
+        height: 2.5rem;
       }
 
       @media (min-width: 0px) and (max-width: 991px) {
@@ -57,11 +132,7 @@
             *****
             -->
             <!-- **************************** Start Logo Component **************************** -->
-            <img
-              class="logo"
-              src="../assets/shared/logo.svg"
-              alt="Logo of the site"
-            />
+            <img src="../assets/shared/logo.svg" alt="Logo of the site" />
             <!-- **************************** End Logo Component ****************************-->
             <!-- 
             *****
@@ -108,17 +179,15 @@
               -->
 
               <a
-                class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu hover flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
-                style="border-bottom-color: hsl(var(--clr-white) / 0.5)"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu - Hover
               </a>
               <a
-                class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
-                style="border-bottom-color: hsl(var(--clr-white))"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu - Active
@@ -128,40 +197,20 @@
               <a
                 class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
-                style="
-                  width: 100%;
-                  height: auto;
-                  border-top: none;
-                  border-bottom: none;
-                "
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu
               </a>
               <a
-                class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu mobile hover flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
-                style="
-                  width: 100%;
-                  height: auto;
-                  border-bottom: none;
-                  border-top: none;
-                  border-right: 0.188rem solid hsl(var(--clr-white) / 0.5);
-                "
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu - Hover
               </a>
               <a
-                class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu mobile active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
-                style="
-                  width: 100%;
-                  height: auto;
-                  border-bottom: none;
-                  border-top: none;
-                  border-right: 0.188rem solid hsl(var(--clr-white));
-                "
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu - Active
@@ -186,7 +235,7 @@
               -->
               <!-- **************************** Start Tabs Menu Component **************************** -->
               <a
-                class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                 href="../index.html"
               >
                 Tabs Menu
@@ -200,16 +249,14 @@
               *****
               -->
               <a
-                class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="tabs-menu hover flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
-                style="border-color: hsl(var(--clr-white) / 0.5)"
               >
                 Tabs Menu - Hover
               </a>
               <a
-                class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="tabs-menu active flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
-                style="border-color: hsl(var(--clr-white))"
               >
                 Tabs Menu - Active
               </a>
@@ -249,11 +296,7 @@
             *****
             -->
             <a
-              class="button flex-center-center bg-white fs-4 ff-bellefair text-dark uppercase"
-              style="
-                box-shadow: 0 0 0 5.5rem hsl(var(--clr-white) / 0.1);
-                color: hsl(var(--clr-dark) / 0.5);
-              "
+              class="button hover flex-center-center bg-white fs-4 ff-bellefair text-dark uppercase"
             >
               Explore - Hover
             </a>
@@ -272,18 +315,11 @@
           >
             <a
               class="button mobile flex-center-center bg-white fs-9 ff-bellefair text-dark uppercase"
-              style="width: 9rem; height: 9rem"
             >
               Explore - Mobile
             </a>
             <a
-              class="button mobile flex-center-center bg-white fs-9 ff-bellefair text-dark uppercase"
-              style="
-                width: 9rem;
-                height: 9rem;
-                box-shadow: 0 0 0 4rem hsl(var(--clr-white) / 0.1);
-                color: hsl(var(--clr-dark) / 0.5);
-              "
+              class="button mobile hover flex-center-center bg-white fs-9 ff-bellefair text-dark uppercase"
             >
               Explore - Mobile Hover
             </a>
@@ -317,24 +353,14 @@
               *****
               *****
               -->
-
-              <a class="small-pagination bg-white" style="opacity: 50.01%"></a>
-              <a class="small-pagination bg-white" style="opacity: 100%"></a>
+              <a class="small-pagination hover bg-white"></a>
+              <a class="small-pagination active bg-white"></a>
             </div>
 
             <div class="flex-justify-center" style="gap: 3.375rem">
-              <a
-                class="small-pagination tablet bg-white"
-                style="width: 0.625rem; height: 0.625rem"
-              ></a>
-              <a
-                class="small-pagination tablet bg-white"
-                style="width: 0.625rem; height: 0.625rem; opacity: 50.01%"
-              ></a>
-              <a
-                class="small-pagination tablet bg-white"
-                style="width: 0.625rem; height: 0.625rem; opacity: 100%"
-              ></a>
+              <a class="small-pagination tablet bg-white"></a>
+              <a class="small-pagination tablet hover bg-white"></a>
+              <a class="small-pagination tablet active bg-white"></a>
             </div>
           </div>
 
@@ -370,17 +396,11 @@
               -->
 
               <a
-                class="large-pagination fs-4 ff-bellefair flex-center-center"
-                style="border-color: hsl(var(--clr-white))"
+                class="large-pagination hover fs-4 ff-bellefair flex-center-center"
                 >0
               </a>
               <a
-                class="large-pagination fs-4 ff-bellefair flex-center-center"
-                style="
-                  color: hsl(var(--clr-dark));
-                  background-color: hsl(var(--clr-white));
-                  border-color: hsl(var(--clr-white));
-                "
+                class="large-pagination active fs-4 ff-bellefair flex-center-center"
                 >0
               </a>
             </div>
@@ -388,27 +408,14 @@
             <div class="flex-justify-center" style="gap: 3.375rem">
               <a
                 class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                style="width: 3.5rem; height: 3.5rem"
                 >0
               </a>
               <a
-                class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                style="
-                  width: 3.5rem;
-                  height: 3.5rem;
-                  border-color: hsl(var(--clr-white));
-                "
+                class="large-pagination tablet hover fs-6 ff-bellefair flex-center-center"
                 >0
               </a>
               <a
-                class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                style="
-                  width: 3.5rem;
-                  height: 3.5rem;
-                  color: hsl(var(--clr-dark));
-                  background-color: hsl(var(--clr-white));
-                  border-color: hsl(var(--clr-white));
-                "
+                class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
                 >0
               </a>
             </div>
@@ -434,7 +441,7 @@
             <!-- **************************** Start Whole Navigation Component **************************** -->
             <div class="navigation flex-between-center">
               <img src="../assets/shared/logo.svg" class="logo" />
-              <div class="navigation-divider"></div>
+              <div class="navigation-divider divider-white"></div>
               <input type="checkbox" id="navigation-mobile-menu-button" />
               <label
                 for="navigation-mobile-menu-button"
@@ -486,27 +493,16 @@
             class="flex column border-light"
             style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
           >
-            <div
-              class="navigation flex-between-center"
-              style="
-                margin: 0rem;
-                padding-top: 0;
-                padding-left: 2.5rem;
-                gap: 2.5rem;
-              "
-            >
+            <div class="navigation tablet flex-between-center">
               <img src="../assets/shared/logo.svg" class="logo" />
-              <div class="navigation-divider" style="display: none"></div>
+              <div class="navigation-divider tablet"></div>
               <input type="checkbox" id="navigation-mobile-menu-button" />
               <label
                 for="navigation-mobile-menu-button"
                 class="navigation-mobile-menu"
               >
               </label>
-              <div
-                class="navigation-menu-container flex-align-center"
-                style="justify-content: end; flex-grow: 1; padding: 0 2.5rem"
-              >
+              <div class="navigation-menu-container tablet flex-align-center">
                 <a
                   class="navigation-menu active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../index.html"
@@ -541,53 +537,21 @@
 
           <div
             class="flex column border-light"
-            style="height: auto; padding: 0 1.5rem"
+            style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
           >
-            <div
-              class="navigation flex-between-center"
-              style="height: auto; padding: 1.5rem"
-            >
-              <img
-                src="../assets/shared/logo.svg"
-                class="logo mobile"
-                style="width: 2.5rem; height: 2.5rem"
-              />
-              <div
-                class="navigation-divider mobile"
-                style="display: none"
-              ></div>
+            <div class="navigation mobile flex-between-center">
+              <img src="../assets/shared/logo.svg" class="logo" />
+              <div class="navigation-divider mobile"></div>
               <input type="checkbox" id="navigation-mobile-menu-button" />
               <label
                 for="navigation-mobile-menu-button"
-                class="navigation-mobile-menu"
-                style="right: 2rem; display: flex"
+                class="navigation-mobile-menu mobile"
               >
               </label>
-              <div
-                class="navigation-menu-container mobile flex"
-                style="
-                  width: 80%;
-                  height: 100vh;
-                  display: none;
-                  flex-direction: column;
-                  gap: 2rem;
-                  padding: 7rem 0 2rem 2rem;
-                  position: fixed;
-                  top: 0;
-                  right: 0;
-                  z-index: 100;
-                "
-              >
+              <div class="navigation-menu-container mobile flex-align-center">
                 <a
                   class="navigation-menu mobile active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../index.html"
-                  style="
-                    width: 100%;
-                    height: auto;
-                    border-bottom: none;
-                    border-top: none;
-                    border-right: 0.188rem solid transparent;
-                  "
                 >
                   <span class="bold letter-spacing-207"> 00 </span>
                   Home
@@ -595,13 +559,6 @@
                 <a
                   class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/destination-moon.html"
-                  style="
-                    width: 100%;
-                    height: auto;
-                    border-bottom: none;
-                    border-top: none;
-                    border-right: 0.188rem solid transparent;
-                  "
                 >
                   <span class="bold letter-spacing-207"> 01 </span>
                   Destination
@@ -609,13 +566,6 @@
                 <a
                   class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/crew-commander.html"
-                  style="
-                    width: 100%;
-                    height: auto;
-                    border-bottom: none;
-                    border-top: none;
-                    border-right: 0.188rem solid transparent;
-                  "
                 >
                   <span class="bold letter-spacing-207"> 02 </span>
                   Crew
@@ -623,13 +573,6 @@
                 <a
                   class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/technology-vehicle.html"
-                  style="
-                    width: 100%;
-                    height: auto;
-                    border-bottom: none;
-                    border-top: none;
-                    border-right: 0.188rem solid transparent;
-                  "
                 >
                   <span class="bold letter-spacing-207"> 03 </span>
                   Technology
@@ -660,26 +603,25 @@
               <!-- **************************** Start Whole Tabs Component **************************** -->
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu active flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Moon
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Mars
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Titan
@@ -696,15 +638,14 @@
 
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Moon
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu active flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Mars
                 </a>
@@ -715,7 +656,7 @@
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Titan
@@ -723,26 +664,25 @@
               </div>
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Moon
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Mars
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
+                  class="tabs-menu active flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Titan
@@ -750,7 +690,7 @@
               </div>
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Moon
@@ -762,15 +702,14 @@
                   Mars
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu active flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Titan
                 </a>
@@ -780,26 +719,25 @@
             <div class="flex column flex-center-center" style="gap: 3.938rem">
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu active flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Moon
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Mars
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Titan
@@ -807,26 +745,25 @@
               </div>
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Moon
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu active flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Mars
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Titan
@@ -834,26 +771,25 @@
               </div>
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Moon
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Mars
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu active flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Titan
@@ -861,27 +797,26 @@
               </div>
               <div class="tabs-menu-container flex-center-center">
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Moon
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Mars
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
                 >
                   Europa
                 </a>
                 <a
-                  class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="tabs-menu active flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
-                  style="border-color: hsl(var(--clr-white))"
                 >
                   Titan
                 </a>
@@ -909,7 +844,7 @@
               -->
               <!-- **************************** Start Small Pagination Component **************************** -->
               <div class="flex-justify-center" style="gap: 3.375rem">
-                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+                <a class="small-pagination active bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
@@ -925,96 +860,48 @@
 
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a class="small-pagination bg-white"></a>
-                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+                <a class="small-pagination active bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
-                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+                <a class="small-pagination active bg-white"></a>
                 <a class="small-pagination bg-white"></a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
-                <a class="small-pagination bg-white" style="opacity: 100%"></a>
+                <a class="small-pagination active bg-white"></a>
               </div>
             </div>
 
             <div class="flex column flex-justify-center" style="gap: 3.375rem">
               <div class="flex-justify-center" style="gap: 3.375rem">
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
+                <a class="small-pagination tablet active bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet active bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet active bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem"
-                ></a>
-                <a
-                  class="small-pagination tablet bg-white"
-                  style="width: 0.625rem; height: 0.625rem; opacity: 100%"
-                ></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet bg-white"></a>
+                <a class="small-pagination tablet active bg-white"></a>
               </div>
             </div>
           </div>
@@ -1040,12 +927,7 @@
               <!-- **************************** Start Large Pagination Component **************************** -->
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination fs-4 ff-bellefair flex-center-center"
-                  style="
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination active fs-4 ff-bellefair flex-center-center"
                   >1
                 </a>
                 <a class="large-pagination fs-4 ff-bellefair flex-center-center"
@@ -1069,12 +951,7 @@
                   >1
                 </a>
                 <a
-                  class="large-pagination fs-4 ff-bellefair flex-center-center"
-                  style="
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination active fs-4 ff-bellefair flex-center-center"
                   >2
                 </a>
                 <a class="large-pagination fs-4 ff-bellefair flex-center-center"
@@ -1089,12 +966,7 @@
                   >2
                 </a>
                 <a
-                  class="large-pagination fs-4 ff-bellefair flex-center-center"
-                  style="
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination active fs-4 ff-bellefair flex-center-center"
                   >3
                 </a>
               </div>
@@ -1103,70 +975,43 @@
             <div class="flex column flex-justify-center" style="gap: 3.375rem">
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="
-                    width: 3.5rem;
-                    height: 3.5rem;
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
                   >1
                 </a>
                 <a
                   class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="width: 3.5rem; height: 3.5rem"
                   >2
                 </a>
                 <a
                   class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="width: 3.5rem; height: 3.5rem"
                   >3
                 </a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a
                   class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="width: 3.5rem; height: 3.5rem"
                   >1
                 </a>
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="
-                    width: 3.5rem;
-                    height: 3.5rem;
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
                   >2
                 </a>
                 <a
                   class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="width: 3.5rem; height: 3.5rem"
                   >3
                 </a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a
                   class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="width: 3.5rem; height: 3.5rem"
                   >1
                 </a>
                 <a
                   class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="width: 3.5rem; height: 3.5rem"
                   >2
                 </a>
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
-                  style="
-                    width: 3.5rem;
-                    height: 3.5rem;
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
                   >3
                 </a>
               </div>
@@ -1186,70 +1031,43 @@
             <div class="flex column flex-justify-center" style="gap: 3.375rem">
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination mobile active fs-9 ff-bellefair flex-center-center"
                   >1
                 </a>
                 <a
                   class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="width: 2.5rem; height: 2.5rem"
                   >2
                 </a>
                 <a
                   class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="width: 2.5rem; height: 2.5rem"
                   >3
                 </a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a
                   class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="width: 2.5rem; height: 2.5rem"
                   >1
                 </a>
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination mobile active fs-9 ff-bellefair flex-center-center"
                   >2
                 </a>
                 <a
                   class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="width: 2.5rem; height: 2.5rem"
                   >3
                 </a>
               </div>
               <div class="flex-justify-center" style="gap: 3.375rem">
                 <a
                   class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="width: 2.5rem; height: 2.5rem"
                   >1
                 </a>
                 <a
                   class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="width: 2.5rem; height: 2.5rem"
                   >2
                 </a>
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
-                  style="
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    color: hsl(var(--clr-dark));
-                    background-color: hsl(var(--clr-white));
-                    border-color: hsl(var(--clr-white));
-                  "
+                  class="large-pagination mobile active fs-9 ff-bellefair flex-center-center"
                   >3
                 </a>
               </div>
