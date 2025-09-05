@@ -193,7 +193,7 @@ function loadCrewContent() {
             style="gap: 2.5rem; flex-grow: 1"
           >
             <div class="flex column">
-              <h4 class="content-role fs-4 ff-bellefair uppercase text-white"></h4>
+              <h4 class="content-role fs-4 ff-bellefair uppercase text-white" style="opacity:50.42%"></h4>
               <h3 class="content-name fs-3 ff-bellefair uppercase text-white"></h3>
             </div>
             <p class="content-bio fs-9 ff-barlow text-light"></p>
