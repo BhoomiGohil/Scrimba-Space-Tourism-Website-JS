@@ -245,7 +245,7 @@ function loadTechnologyContent() {
             .join("")}
         </div>
         <div class="content-block technology flex column">
-            <h4 class="fs-4 ff-bellefair uppercase text-light">
+            <h4 class="fs-4 ff-bellefair uppercase text-light" style="opacity: 50.42%">
               THE TERMINOLOGY…
             </h4>
             <div class="flex column">
