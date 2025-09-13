@@ -373,30 +373,20 @@ select {
   z-index: 1;
 }
 
-.navigation-mobile-menu,
-.navigation-mobile-menu-close {
+.navigation-mobile-menu {
   width: 24px;
   height: 24px;
   display: none;
+  position: relative;
+  z-index: 101;
   cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.navigation-mobile-menu {
-  background-image: url(./assets/shared/icon-hamburger.svg);
-}
-
-.navigation-mobile-menu-close {
-  margin-right: 1.5rem;
-  background-image: url(./assets/shared/icon-close.svg);
-}
-
-/* .menu-lines {
+.menu-lines {
   width: 100%;
   --h: 0.23rem;
   --o: 100%;
-} */
+}
 
 .navigation-menu-container {
   padding: 0 4rem 0 6rem;
@@ -464,6 +454,7 @@ select {
   text-align: center;
   border-radius: 100%;
   transition: box-shadow 500ms linear;
+  text-decoration: none;
 }
 
 .button:hover,
@@ -824,8 +815,7 @@ select {
     display: none;
   }
 
-  .navigation-mobile-menu,
-  .navigation-mobile-menu-close {
+  .navigation-mobile-menu {
     display: flex;
   }
 
@@ -837,7 +827,7 @@ select {
     position: fixed;
     inset: 0 0 0 20%;
     z-index: 100;
-    padding: 2rem 0 2rem 2rem;
+    padding: 7rem 0 7rem 2rem;
   }
 
   .navigation-menu-container[data-visible="false"] {
@@ -848,6 +838,52 @@ select {
   .navigation-menu-container[data-visible="true"] {
     transform: translate(0%);
     transition: transform 0.5s ease-out;
+  }
+
+  .navigation-menu-container[data-visible="true"]
+    ~ .navigation-mobile-menu
+    > .menu-lines:first-child {
+    opacity: 100%;
+    transform: translateY(10px) rotate(45deg);
+    transition: transform 0.5s ease-out 0.4s;
+  }
+
+  .navigation-menu-container[data-visible="true"]
+    ~ .navigation-mobile-menu
+    > .menu-lines {
+    opacity: 0%;
+    transition: opacity 0.5s ease-out 0.1s;
+  }
+
+  .navigation-menu-container[data-visible="true"]
+    ~ .navigation-mobile-menu
+    > .menu-lines:last-child {
+    opacity: 100%;
+    transform: translateY(-10px) rotate(-45deg);
+    transition: transform 0.5s ease-out 0.4s;
+  }
+
+  .navigation-menu-container[data-visible="false"]
+    ~ .navigation-mobile-menu
+    > .menu-lines:first-child {
+    opacity: 100%;
+    transform: translateY(0) rotate(0);
+    transition: transform 0.5s ease-out 0.1s;
+  }
+
+  .navigation-menu-container[data-visible="false"]
+    ~ .navigation-mobile-menu
+    > .menu-lines {
+    opacity: 100%;
+    transition: opacity 0.5s ease-out 0.4s;
+  }
+
+  .navigation-menu-container[data-visible="false"]
+    ~ .navigation-mobile-menu
+    > .menu-lines:last-child {
+    opacity: 100%;
+    transform: translateY(0) rotate(0);
+    transition: transform 0.5s ease-out 0.1s;
   }
 
   .navigation-menu {
@@ -862,54 +898,6 @@ select {
     border-right-color: hsl(var(--clr-white));
   }
 
-  /*
-  
-  #navigation-mobile-menu-button:checked
-    ~ .navigation-mobile-menu
-    > .menu-lines:first-child {
-    opacity: 100%;
-    transform: translateY(10px) rotate(45deg);
-    transition: transform 0.5s ease-out 0.4s;
-  }
-
-  #navigation-mobile-menu-button:checked
-    ~ .navigation-mobile-menu
-    > .menu-lines {
-    opacity: 0%;
-    transition: opacity 0.5s ease-out 0.1s;
-  }
-
-  #navigation-mobile-menu-button:checked
-    ~ .navigation-mobile-menu
-    > .menu-lines:last-child {
-    opacity: 100%;
-    transform: translateY(-10px) rotate(-45deg);
-    transition: transform 0.5s ease-out 0.4s;
-  }
-
-  #navigation-mobile-menu-button:not(:checked)
-    ~ .navigation-mobile-menu
-    > .menu-lines:first-child {
-    opacity: 100%;
-    transform: translateY(0) rotate(0);
-    transition: transform 0.5s ease-out 0.1s;
-  }
-
-  #navigation-mobile-menu-button:not(:checked)
-    ~ .navigation-mobile-menu
-    > .menu-lines {
-    opacity: 100%;
-    transition: opacity 0.5s ease-out 0.4s;
-  }
-
-  #navigation-mobile-menu-button:not(:checked)
-    ~ .navigation-mobile-menu
-    > .menu-lines:last-child {
-    opacity: 100%;
-    transform: translateY(0) rotate(0);
-    transition: transform 0.5s ease-out 0.1s;
-  }
-  */
   .tabs-menu-container {
     justify-content: center;
   }
