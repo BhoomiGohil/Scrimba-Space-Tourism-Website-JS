@@ -15,7 +15,7 @@ var technologyParent = document.querySelector("#contentTechnology");
 // ✅ Navigation builder
 function loadNav() {
   return `
-  <div class="navigation flex-between-center">
+  <div class="navigation flex justify-between align-center">
     <img src="../assets/shared/logo.svg" class="logo" />
     <div
       class="navigation-divider divider-white">
@@ -23,7 +23,7 @@ function loadNav() {
     <div
         class="navigation-mobile-menu">
     </div>
-    <div class="navigation-menu-container">
+    <div class="navigation-menu-container flex" data-visible="false">
       <div
         class="navigation-mobile-menu-close">
       </div>
@@ -32,7 +32,7 @@ function loadNav() {
           (element, index) =>
             `
                 <a
-                    class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                    class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                     href="${element.url}"
                 >
                     <span class="bold letter-spacing-207"> 
@@ -65,31 +65,18 @@ var menu = document.querySelector(".navigation-menu-container");
 var mobileMenu = document.querySelector(".navigation-mobile-menu");
 var mobileCloseMenu = document.querySelector(".navigation-mobile-menu-close");
 
-function menuCloseOpen() {
-  if (window.innerWidth <= 735) {
-    menu.style.display = "none";
-    mobileMenu.addEventListener("click", (element) => {
-      menu.style.display = "flex";
-    });
+mobileMenu.addEventListener("click", (element) => {
+  menu.setAttribute("data-visible", true);
+});
 
-    mobileCloseMenu.addEventListener("click", (element) => {
-      menu.style.display = "none";
-    });
-  } else if (window.innerWidth >= 736) {
-    menu.style.display = "flex";
-  }
-}
-
-menuCloseOpen();
-
-window.addEventListener("resize", () => {
-  menuCloseOpen();
+mobileCloseMenu.addEventListener("click", (element) => {
+  menu.setAttribute("data-visible", false);
 });
 
 // ✅ Home content
 function home() {
   return `
-        <div class="content-block index flex column">
+         <div class="content-block index flex column">
           <h5 class="fs-5 ff-barlow-cond letter-spacing-4 uppercase text-light">
             So, you want to travel to
           </h5>
@@ -101,9 +88,11 @@ function home() {
             world experience!
           </p>
         </div>
-        <div class="content-button index flex-justify-end">
+        <div
+          class="content-button index flex justify-self-end align-self-center"
+        >
           <a
-            class="button flex-center-center bg-white fs-4 ff-bellefair text-dark uppercase"
+            class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
           >
             Explore
           </a>
@@ -121,14 +110,14 @@ function loadDestinationContent() {
         <h5 class="numbered-title" style="grid-column: 2/4">
           <span>01</span> PICK YOUR DESTINATION
         </h5>
-        <div class="content-image destination">
+        <div class="content-image destination align-self-center">
           <img
             src=""
             style="width: 100%; height: 100%"
           />
         </div>
-        <div class="content-block destination column">
-          <div class="tabs-menu-container">
+        <div class="content-block destination flex column align-self-center">
+          <div class="tabs-menu-container flex">
           ${data.destinations
             .map(
               (element) =>
@@ -187,9 +176,9 @@ function loadCrewContent() {
         <h5 class="numbered-title" style="grid-column: 2/4">
           <span>02</span>MEET YOUR CREW
         </h5>
-        <div class="content-block crew column">
+        <div class="content-block crew flex column">
           <div
-            class="flex-justify-center column"
+            class="flex column justify-center"
             style="gap: 2.5rem; flex-grow: 1"
           >
             <div class="flex column">
@@ -204,7 +193,7 @@ function loadCrewContent() {
              .join("")}
           </div>
         </div>
-        <div class="content-image crew">
+        <div class="content-image crew justify-self-center align-self-end">
           <img src="" />
         </div>`;
 }
@@ -233,12 +222,12 @@ function loadTechnologyContent() {
             style="width: 100%; height: 100%"
           />
         </div>
-        <div class="content-block-container flex-align-center">
-          <div class="large-pagination-container flex-between-center column">
+        <div class="content-block-container flex align-center">
+          <div class="large-pagination-container flex column justify-between align-center">
           ${data.technology
             .map(
               (element, index) =>
-                `<div class="large-pagination fs-4 ff-bellefair flex-center-center">
+                `<div class="large-pagination fs-4 ff-bellefair flex justify-center align-center">
                   ${index + 1}
                 </div>`
             )
@@ -254,7 +243,7 @@ function loadTechnologyContent() {
             </div>
           </div>
       </div>
-      <div class="content-image technology flex">
+      <div class="content-image technology justify-self-end align-self-center">
         <img src="" style="width: 100%; height: 100%" />
   </div>`;
 }

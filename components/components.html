@@ -11,13 +11,7 @@
     />
     <title>Components</title>
     <link rel="stylesheet" href="../index.css" />
-    <link rel="stylesheet" href="../components/components.css" />
     <style>
-      .logo.mobile {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-
       .navigation.tablet {
         margin: 0rem;
         padding-top: 0;
@@ -35,6 +29,11 @@
         padding: 0 2.5rem;
       }
 
+      .logo.mobile {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
       .navigation.mobile {
         height: auto;
         padding: 1.5rem;
@@ -44,16 +43,19 @@
         display: none;
       }
 
+      .navigation-mobile-menu.mobile {
+        right: 2rem;
+        display: flex;
+      }
+
       .navigation-menu-container.mobile {
-        width: 80%;
         height: 100vh;
-        display: none;
         flex-direction: column;
         gap: 2rem;
         padding: 7rem 0 2rem 2rem;
         position: fixed;
-        top: 0;
-        right: 0;
+        inset: 0 0 0 20%;
+        transform: translate(100%);
         z-index: 100;
       }
 
@@ -63,11 +65,6 @@
         border-bottom: none;
         border-top: none;
         border-right: 0.188rem solid transparent;
-      }
-
-      .navigation-mobile-menu.mobile {
-        right: 2rem;
-        display: flex;
       }
 
       .navigation-menu.mobile:hover,
@@ -132,7 +129,11 @@
             *****
             -->
             <!-- **************************** Start Logo Component **************************** -->
-            <img src="../assets/shared/logo.svg" alt="Logo of the site" />
+            <img
+              src="../assets/shared/logo.svg"
+              alt="Logo of the site"
+              class="logo"
+            />
             <!-- **************************** End Logo Component ****************************-->
             <!-- 
             *****
@@ -144,7 +145,7 @@
           </div>
 
           <div
-            class="grid grid-align-center border-light"
+            class="grid align-center border-light"
             style="
               padding: 3rem;
               grid-template-columns: 1fr 1fr;
@@ -153,7 +154,7 @@
               --bs: dotted;
             "
           >
-            <div class="flex-center-center" style="gap: 2rem">
+            <div class="flex justify-center align-center" style="gap: 2rem">
               <!-- 
               *****
               *****
@@ -163,7 +164,7 @@
               -->
               <!-- **************************** Start Navigation Menu Component **************************** -->
               <a
-                class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
@@ -179,37 +180,40 @@
               -->
 
               <a
-                class="navigation-menu hover flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu hover flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu - Hover
               </a>
               <a
-                class="navigation-menu active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu active flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu - Active
               </a>
             </div>
-            <div class="flex column flex-center-center" style="gap: 2rem">
+            <div
+              class="flex column flex justify-center align-center"
+              style="gap: 2rem"
+            >
               <a
-                class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu mobile align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu
               </a>
               <a
-                class="navigation-menu mobile hover flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu mobile hover align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
                 Menu - Hover
               </a>
               <a
-                class="navigation-menu mobile active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                class="navigation-menu mobile active align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                 href="../index.html"
               >
                 <span class="bold letter-spacing-207"> 00 </span>
@@ -223,7 +227,7 @@
             style="padding: 3rem; --bw: 0.1rem; --bs: dotted; gap: 3.938rem"
           >
             <div
-              class="tabs-menu-container flex-center-center"
+              class="tabs-menu-container flex justify-center align-center"
               style="gap: 3.938rem"
             >
               <!-- 
@@ -283,7 +287,7 @@
             -->
             <!-- **************************** Start Button Component **************************** -->
             <a
-              class="button flex-center-center bg-white fs-4 ff-bellefair text-dark uppercase"
+              class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
             >
               Explore
             </a>
@@ -296,7 +300,7 @@
             *****
             -->
             <a
-              class="button hover flex-center-center bg-white fs-4 ff-bellefair text-dark uppercase"
+              class="button hover flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
             >
               Explore - Hover
             </a>
@@ -314,12 +318,12 @@
             "
           >
             <a
-              class="button mobile flex-center-center bg-white fs-9 ff-bellefair text-dark uppercase"
+              class="button mobile flex justify-center align-center bg-white fs-9 ff-bellefair text-dark uppercase"
             >
               Explore - Mobile
             </a>
             <a
-              class="button mobile hover flex-center-center bg-white fs-9 ff-bellefair text-dark uppercase"
+              class="button mobile hover flex justify-center align-center bg-white fs-9 ff-bellefair text-dark uppercase"
             >
               Explore - Mobile Hover
             </a>
@@ -335,7 +339,7 @@
               --bs: dotted;
             "
           >
-            <div class="flex-justify-center" style="gap: 3.375rem">
+            <div class="flex justify-center" style="gap: 3.375rem">
               <!-- 
               *****
               *****
@@ -357,7 +361,7 @@
               <a class="small-pagination active bg-white"></a>
             </div>
 
-            <div class="flex-justify-center" style="gap: 3.375rem">
+            <div class="flex justify-center" style="gap: 3.375rem">
               <a class="small-pagination tablet bg-white"></a>
               <a class="small-pagination tablet hover bg-white"></a>
               <a class="small-pagination tablet active bg-white"></a>
@@ -374,7 +378,7 @@
               --bs: dotted;
             "
           >
-            <div class="flex-justify-center" style="gap: 3.375rem">
+            <div class="flex justify-center" style="gap: 3.375rem">
               <!-- 
               *****
               *****
@@ -383,7 +387,8 @@
               *****
               -->
               <!-- **************************** Start Large Single Pagination Component **************************** -->
-              <a class="large-pagination fs-4 ff-bellefair flex-center-center"
+              <a
+                class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
                 >0
               </a>
               <!-- **************************** End Large Single Pagination Component **************************** -->
@@ -396,26 +401,26 @@
               -->
 
               <a
-                class="large-pagination hover fs-4 ff-bellefair flex-center-center"
+                class="large-pagination hover fs-4 ff-bellefair flex justify-center align-center"
                 >0
               </a>
               <a
-                class="large-pagination active fs-4 ff-bellefair flex-center-center"
+                class="large-pagination active fs-4 ff-bellefair flex justify-center align-center"
                 >0
               </a>
             </div>
 
-            <div class="flex-justify-center" style="gap: 3.375rem">
+            <div class="flex justify-center" style="gap: 3.375rem">
               <a
-                class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
+                class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
                 >0
               </a>
               <a
-                class="large-pagination tablet hover fs-6 ff-bellefair flex-center-center"
+                class="large-pagination tablet hover fs-6 ff-bellefair flex justify-center align-center"
                 >0
               </a>
               <a
-                class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
+                class="large-pagination tablet active fs-6 ff-bellefair flex justify-center align-center"
                 >0
               </a>
             </div>
@@ -439,39 +444,35 @@
             *****
             -->
             <!-- **************************** Start Whole Navigation Component **************************** -->
-            <div class="navigation flex-between-center">
+            <div class="navigation flex justify-between align-center">
               <img src="../assets/shared/logo.svg" class="logo" />
               <div class="navigation-divider divider-white"></div>
-              <input type="checkbox" id="navigation-mobile-menu-button" />
-              <label
-                for="navigation-mobile-menu-button"
-                class="navigation-mobile-menu"
-              >
-              </label>
-              <div class="navigation-menu-container flex-align-center">
+              <div class="navigation-mobile-menu"></div>
+              <div class="navigation-menu-container flex">
+                <div class="navigation-mobile-menu-close"></div>
                 <a
-                  class="navigation-menu active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu active flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../index.html"
                 >
                   <span class="bold letter-spacing-207"> 00 </span>
                   Home
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/destination-moon.html"
                 >
                   <span class="bold letter-spacing-207"> 01 </span>
                   Destination
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/crew-commander.html"
                 >
                   <span class="bold letter-spacing-207"> 02 </span>
                   Crew
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/technology-vehicle.html"
                 >
                   <span class="bold letter-spacing-207"> 03 </span>
@@ -493,39 +494,35 @@
             class="flex column border-light"
             style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
           >
-            <div class="navigation tablet flex-between-center">
+            <div class="navigation tablet flex justify-between align-center">
               <img src="../assets/shared/logo.svg" class="logo" />
-              <div class="navigation-divider tablet"></div>
-              <input type="checkbox" id="navigation-mobile-menu-button" />
-              <label
-                for="navigation-mobile-menu-button"
-                class="navigation-mobile-menu"
-              >
-              </label>
-              <div class="navigation-menu-container tablet flex-align-center">
+              <div class="navigation-divider tablet divider-white"></div>
+              <div class="navigation-mobile-menu"></div>
+              <div class="navigation-menu-container tablet flex">
+                <div class="navigation-mobile-menu-close"></div>
                 <a
-                  class="navigation-menu active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu active flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../index.html"
                 >
                   <span class="bold letter-spacing-207"> 00 </span>
                   Home
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/destination-moon.html"
                 >
                   <span class="bold letter-spacing-207"> 01 </span>
                   Destination
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/crew-commander.html"
                 >
                   <span class="bold letter-spacing-207"> 02 </span>
                   Crew
                 </a>
                 <a
-                  class="navigation-menu flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/technology-vehicle.html"
                 >
                   <span class="bold letter-spacing-207"> 03 </span>
@@ -539,39 +536,35 @@
             class="flex column border-light"
             style="padding: 3rem; --bw: 0.1rem; --bs: dotted"
           >
-            <div class="navigation mobile flex-between-center">
+            <div class="navigation mobile flex justify-between align-center">
               <img src="../assets/shared/logo.svg" class="logo" />
-              <div class="navigation-divider mobile"></div>
-              <input type="checkbox" id="navigation-mobile-menu-button" />
-              <label
-                for="navigation-mobile-menu-button"
-                class="navigation-mobile-menu mobile"
-              >
-              </label>
-              <div class="navigation-menu-container mobile flex-align-center">
+              <div class="navigation-divider mobile divider-white"></div>
+              <div class="navigation-mobile-menu mobile"></div>
+              <div class="navigation-menu-container mobile flex">
+                <div class="navigation-mobile-menu-close"></div>
                 <a
-                  class="navigation-menu mobile active flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu mobile active flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../index.html"
                 >
                   <span class="bold letter-spacing-207"> 00 </span>
                   Home
                 </a>
                 <a
-                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/destination-moon.html"
                 >
                   <span class="bold letter-spacing-207"> 01 </span>
                   Destination
                 </a>
                 <a
-                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/crew-commander.html"
                 >
                   <span class="bold letter-spacing-207"> 02 </span>
                   Crew
                 </a>
                 <a
-                  class="navigation-menu mobile flex-align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
+                  class="navigation-menu mobile flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
                   href="../html/technology-vehicle.html"
                 >
                   <span class="bold letter-spacing-207"> 03 </span>
@@ -582,7 +575,7 @@
           </div>
 
           <div
-            class="grid grid-align-center border-light"
+            class="grid align-center border-light"
             style="
               padding: 3rem;
               grid-template-columns: 1fr 1fr;
@@ -592,7 +585,10 @@
               --bs: dotted;
             "
           >
-            <div class="flex column flex-center-center" style="gap: 3.938rem">
+            <div
+              class="flex column flex justify-center align-center"
+              style="gap: 3.938rem"
+            >
               <!-- 
               *****
               *****
@@ -601,7 +597,7 @@
               *****
               -->
               <!-- **************************** Start Whole Tabs Component **************************** -->
-              <div class="tabs-menu-container flex-center-center">
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu active flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -636,7 +632,7 @@
               *****
               -->
 
-              <div class="tabs-menu-container flex-center-center">
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -662,7 +658,7 @@
                   Titan
                 </a>
               </div>
-              <div class="tabs-menu-container flex-center-center">
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -688,7 +684,7 @@
                   Titan
                 </a>
               </div>
-              <div class="tabs-menu-container flex-center-center">
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -716,8 +712,11 @@
               </div>
             </div>
 
-            <div class="flex column flex-center-center" style="gap: 3.938rem">
-              <div class="tabs-menu-container flex-center-center">
+            <div
+              class="flex column flex justify-center align-center"
+              style="gap: 3.938rem"
+            >
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu active flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -743,7 +742,7 @@
                   Titan
                 </a>
               </div>
-              <div class="tabs-menu-container flex-center-center">
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -769,7 +768,7 @@
                   Titan
                 </a>
               </div>
-              <div class="tabs-menu-container flex-center-center">
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -795,7 +794,7 @@
                   Titan
                 </a>
               </div>
-              <div class="tabs-menu-container flex-center-center">
+              <div class="tabs-menu-container flex justify-center align-center">
                 <a
                   class="tabs-menu flex fs-7 ff-barlow-cond letter-spacing-2 uppercase"
                   href="../index.html"
@@ -825,7 +824,7 @@
           </div>
 
           <div
-            class="grid grid-align-center border-light"
+            class="grid align-center border-light"
             style="
               padding: 3rem;
               grid-template-columns: 1fr 1fr;
@@ -834,7 +833,7 @@
               --bs: dotted;
             "
           >
-            <div class="flex column flex-justify-center" style="gap: 3.375rem">
+            <div class="flex column justify-center" style="gap: 3.375rem">
               <!-- 
               *****
               *****
@@ -843,7 +842,7 @@
               *****
               -->
               <!-- **************************** Start Small Pagination Component **************************** -->
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination active bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
@@ -858,19 +857,19 @@
               *****
               -->
 
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination active bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination active bg-white"></a>
                 <a class="small-pagination bg-white"></a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
                 <a class="small-pagination bg-white"></a>
@@ -878,26 +877,26 @@
               </div>
             </div>
 
-            <div class="flex column flex-justify-center" style="gap: 3.375rem">
-              <div class="flex-justify-center" style="gap: 3.375rem">
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination tablet active bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet active bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet active bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
                 <a class="small-pagination tablet bg-white"></a>
@@ -907,7 +906,7 @@
           </div>
 
           <div
-            class="grid grid-align-center border-light"
+            class="grid align-center border-light"
             style="
               padding: 3rem;
               grid-template-columns: 1fr 1fr;
@@ -916,7 +915,7 @@
               --bs: dotted;
             "
           >
-            <div class="flex column flex-justify-center" style="gap: 3.375rem">
+            <div class="flex column justify-center" style="gap: 3.375rem">
               <!-- 
               *****
               *****
@@ -925,15 +924,17 @@
               *****
               -->
               <!-- **************************** Start Large Pagination Component **************************** -->
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination active fs-4 ff-bellefair flex-center-center"
+                  class="large-pagination active fs-4 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
-                <a class="large-pagination fs-4 ff-bellefair flex-center-center"
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
-                <a class="large-pagination fs-4 ff-bellefair flex-center-center"
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
@@ -946,72 +947,76 @@
               *****
               -->
 
-              <div class="flex-justify-center" style="gap: 3.375rem">
-                <a class="large-pagination fs-4 ff-bellefair flex-center-center"
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
                 <a
-                  class="large-pagination active fs-4 ff-bellefair flex-center-center"
+                  class="large-pagination active fs-4 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
-                <a class="large-pagination fs-4 ff-bellefair flex-center-center"
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
-                <a class="large-pagination fs-4 ff-bellefair flex-center-center"
+              <div class="flex justify-center" style="gap: 3.375rem">
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
-                <a class="large-pagination fs-4 ff-bellefair flex-center-center"
+                <a
+                  class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
                 <a
-                  class="large-pagination active fs-4 ff-bellefair flex-center-center"
+                  class="large-pagination active fs-4 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
             </div>
 
-            <div class="flex column flex-justify-center" style="gap: 3.375rem">
-              <div class="flex-justify-center" style="gap: 3.375rem">
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet active fs-6 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
                 <a
-                  class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet active fs-6 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
                 <a
-                  class="large-pagination tablet fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet fs-6 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
                 <a
-                  class="large-pagination tablet active fs-6 ff-bellefair flex-center-center"
+                  class="large-pagination tablet active fs-6 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
@@ -1019,7 +1024,7 @@
           </div>
 
           <div
-            class="grid grid-align-center border-light"
+            class="grid align-center border-light"
             style="
               padding: 3rem;
               grid-template-columns: 1fr 1fr;
@@ -1028,46 +1033,46 @@
               --bs: dotted;
             "
           >
-            <div class="flex column flex-justify-center" style="gap: 3.375rem">
-              <div class="flex-justify-center" style="gap: 3.375rem">
+            <div class="flex column justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination mobile active fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile active fs-9 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
                 <a
-                  class="large-pagination mobile active fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile active fs-9 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
-              <div class="flex-justify-center" style="gap: 3.375rem">
+              <div class="flex justify-center" style="gap: 3.375rem">
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
                   >1
                 </a>
                 <a
-                  class="large-pagination mobile fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile fs-9 ff-bellefair flex justify-center align-center"
                   >2
                 </a>
                 <a
-                  class="large-pagination mobile active fs-9 ff-bellefair flex-center-center"
+                  class="large-pagination mobile active fs-9 ff-bellefair flex justify-center align-center"
                   >3
                 </a>
               </div>
