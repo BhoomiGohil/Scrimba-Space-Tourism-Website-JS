@@ -5,73 +5,10 @@ const data = await response.json();
 // ✅ Grab possible containers from the DOM
 var defaultIndex = 0;
 
-var navigationParent = document.querySelector("#navigation");
-
 var homeParent = document.querySelector("#home");
 var destinationParent = document.querySelector("#contentDestination");
 var crewParent = document.querySelector("#contentCrew");
 var technologyParent = document.querySelector("#contentTechnology");
-
-// ✅ Navigation builder
-function loadNav() {
-  return `
-  <div class="navigation flex justify-between align-center">
-    <img src="../assets/shared/logo.svg" class="logo" />
-    <div
-      class="navigation-divider divider-white">
-    </div>
-    <div
-        class="navigation-mobile-menu">
-    </div>
-    <div class="navigation-menu-container flex" data-visible="false">
-      <div
-        class="navigation-mobile-menu-close">
-      </div>
-      ${data.navItems
-        .map(
-          (element, index) =>
-            `
-                <a
-                    class="navigation-menu flex align-center fs-8 ff-barlow-cond letter-spacing-2 uppercase text-white"
-                    href="${element.url}"
-                >
-                    <span class="bold letter-spacing-207"> 
-                      ${String(index).padStart(2, "0")} 
-                    </span> 
-                    ${element.name}
-                </a>
-            `
-        )
-        .join("")}
-    </div>
-  </div>
-  `;
-}
-
-// ✅ Inject nav only if container exists
-if (navigationParent) {
-  navigationParent.innerHTML = loadNav();
-
-  const current = location.pathname;
-
-  document.querySelectorAll(".navigation-menu").forEach((link) => {
-    if (link.getAttribute("href") === current) {
-      link.classList.add("active");
-    }
-  });
-}
-
-var menu = document.querySelector(".navigation-menu-container");
-var mobileMenu = document.querySelector(".navigation-mobile-menu");
-var mobileCloseMenu = document.querySelector(".navigation-mobile-menu-close");
-
-mobileMenu.addEventListener("click", (element) => {
-  menu.setAttribute("data-visible", true);
-});
-
-mobileCloseMenu.addEventListener("click", (element) => {
-  menu.setAttribute("data-visible", false);
-});
 
 // ✅ Home content
 function home() {
@@ -91,7 +28,7 @@ function home() {
         <div
           class="content-button index flex justify-self-end align-self-center"
         >
-          <a
+          <a href="html/destination.html"
             class="button flex justify-center align-center bg-white fs-4 ff-bellefair text-dark uppercase"
           >
             Explore
