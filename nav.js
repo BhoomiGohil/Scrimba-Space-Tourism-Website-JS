@@ -1,14 +1,14 @@
 // ✅ Fetch your JSON once and use it everywhere
 const response = await fetch("../data.json");
 const data = await response.json();
-
+ß;
 var navigationParent = document.querySelector("#navigation");
 
 // ✅ Navigation builder
 function loadNav() {
   return `
   <div class="navigation flex justify-between align-center">
-    <img src="../assets/shared/logo.svg" class="logo" />
+    <a href="/index.html" class="logo"></a>
     <div class="navigation-divider divider-white"></div>
     <div class="navigation-menu-container flex justify-center" data-visible="false">
       ${data.navItems

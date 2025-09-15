@@ -355,6 +355,10 @@ select {
 .logo {
   width: 3rem;
   height: 3rem;
+  background-image: url(./assets/shared/logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navigation {
@@ -366,10 +370,9 @@ select {
 }
 
 .navigation-divider {
-  width: 100%;
-  margin-right: 2rem;
-  transform: translateX(4rem);
-  opacity: 25%;
+  flex-grow: 1;
+  transform: translateX(2rem);
+  --o: 25%;
   z-index: 1;
 }
 
