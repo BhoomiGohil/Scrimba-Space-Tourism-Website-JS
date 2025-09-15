@@ -1,7 +1,7 @@
 // ✅ Fetch your JSON once and use it everywhere
 const response = await fetch("../data.json");
 const data = await response.json();
-ß;
+
 var navigationParent = document.querySelector("#navigation");
 
 // ✅ Navigation builder
