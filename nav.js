@@ -7,7 +7,7 @@ var navigationParent = document.querySelector("#navigation");
 // ✅ Navigation builder
 function loadNav() {
   return `
-  <div class="navigation flex justify-between align-center">
+  <nav class="navigation flex justify-between align-center" aria-label="Main navigation">
     <a href="/index.html" class="logo"></a>
     <div class="navigation-divider divider-white"></div>
     <div class="navigation-menu-container flex justify-center" data-visible="false">
@@ -33,7 +33,7 @@ function loadNav() {
       <div class="menu-lines divider-white"></div>
       <div class="menu-lines divider-white"></div>
     </div>
-  </div>`;
+  </nav>`;
 }
 
 // ✅ Inject nav only if container exists
