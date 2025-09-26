@@ -37,9 +37,53 @@
   <body>
     <div class="main">
       <div id="navigation"></div>
-      <div id="contentTechnology" class="content-grid grid technology"></div>
+      <div
+        id="contentTechnology"
+        class="content-grid grid technology"
+        data-grid="technology"
+      >
+        <h5 class="numbered-title" style="grid-column: 2/4">
+          <span>03</span> Space Launch 101
+        </h5>
+        <div class="content-image technology-mobile flex">
+          <img src="" style="width: 100%; height: 100%" />
+        </div>
+        <div class="content-block-container flex align-center">
+          <div
+            class="large-pagination-container flex column justify-between align-center"
+            role="paginationList"
+          >
+            ${data.technology .map( (element, index) => `
+            <div
+              class="large-pagination fs-4 ff-bellefair flex justify-center align-center"
+            >
+              ${index + 1}
+            </div>
+            ` ) .join("")}
+          </div>
+          <div class="content-block technology flex column">
+            <h4
+              class="fs-4 ff-bellefair uppercase text-light"
+              style="opacity: 50.42%"
+            >
+              THE TERMINOLOGY…
+            </h4>
+            <div class="flex column">
+              <h3
+                class="content-name fs-3 ff-bellefair uppercase text-white"
+              ></h3>
+              <p class="content-description fs-9 ff-barlow text-light"></p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="content-image technology justify-self-end align-self-center"
+        >
+          <img src="" style="width: 100%; height: 100%" />
+        </div>
+      </div>
     </div>
     <script type="module" src="../nav.js"></script>
-    <script type="module" src="../index.js"></script>
+    <script type="module" src="../technology.js"></script>
   </body>
 </html>

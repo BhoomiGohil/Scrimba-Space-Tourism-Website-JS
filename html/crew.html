@@ -37,9 +37,37 @@
   <body>
     <div class="main">
       <div id="navigation"></div>
-      <div id="contentCrew" class="content-grid grid crew"></div>
+      <div id="contentCrew" class="content-grid grid crew" data-grid="crew">
+        <h5 class="numbered-title" style="grid-column: 2/4">
+          <span>02</span>MEET YOUR CREW
+        </h5>
+        <div class="content-block crew flex column">
+          <div
+            class="flex column justify-center"
+            style="gap: 2.5rem; flex-grow: 1"
+          >
+            <div class="flex column">
+              <h4
+                class="content-role fs-4 ff-bellefair uppercase text-white"
+                style="opacity: 50.42%"
+              ></h4>
+              <h3
+                class="content-name fs-3 ff-bellefair uppercase text-white"
+              ></h3>
+            </div>
+            <p class="content-bio fs-9 ff-barlow text-light"></p>
+          </div>
+          <div
+            class="small-pagination-container flex"
+            role="paginationList"
+          ></div>
+        </div>
+        <div class="content-image crew justify-self-center align-self-end">
+          <img src="" />
+        </div>
+      </div>
     </div>
     <script type="module" src="../nav.js"></script>
-    <script type="module" src="../index.js"></script>
+    <script type="module" src="../crew.js"></script>
   </body>
 </html>

@@ -37,9 +37,52 @@
   <body>
     <div class="main">
       <div id="navigation"></div>
-      <div id="contentDestination" class="content-grid grid destination"></div>
+      <div
+        id="contentDestination"
+        class="content-grid grid destination"
+        data-grid="destination"
+      >
+        <h5 class="numbered-title" style="grid-column: 2/4">
+          <span>01</span> PICK YOUR DESTINATION
+        </h5>
+        <div class="content-image destination align-self-center">
+          <img src="" style="width: 100%; height: 100%" />
+        </div>
+        <div class="content-block destination flex column align-self-center">
+          <div class="tabs-menu-container flex" role="tabList"></div>
+          <div class="flex column">
+            <h2
+              class="content-name fs-2 ff-bellefair uppercase text-white"
+            ></h2>
+            <p class="content-description fs-9 ff-barlow text-light"></p>
+          </div>
+          <div class="divider-white" style="--o: 25%"></div>
+          <div class="grid" style="grid-template-columns: 1fr 1fr">
+            <div class="flex column" style="gap: 0.75rem">
+              <p
+                class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase"
+              >
+                AVG. DISTANCE
+              </p>
+              <h6
+                class="content-distance fs-6 ff-bellefair text-white uppercase"
+              ></h6>
+            </div>
+            <div class="flex column" style="gap: 0.75rem">
+              <p
+                class="fs-7 ff-barlow-cond letter-spacing-2 text-light uppercase"
+              >
+                Est. travel time
+              </p>
+              <h6
+                class="content-travel fs-6 ff-bellefair text-white uppercase"
+              ></h6>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script type="module" src="../nav.js"></script>
-    <script type="module" src="../index.js"></script>
+    <script type="module" src="../destination.js"></script>
   </body>
 </html>
