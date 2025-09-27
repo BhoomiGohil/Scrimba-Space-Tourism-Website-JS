@@ -8,7 +8,7 @@ function loadCrewPagination() {
            ${data.destinations
              .map(
                (element) =>
-                 `<div class="small-pagination bg-white" role="pagination"></div>`
+                 `<a class="small-pagination bg-white" role="pagination" aria-label="Show ${element.name} crew profile"></a>`
              )
              .join("")}
           `;

@@ -8,11 +8,11 @@ function loadDestinationTabs() {
           ${data.destinations
             .map(
               (element) =>
-                `<div 
+                `<a 
                     class="tabs-menu flex fs-8 ff-barlow-cond letter-spacing-2 uppercase" 
-                    role="tab">
+                    role="tab" aria-label="Show ${element.name} destination profile">
                     ${element.name}
-                </div>`
+                </a>`
             )
             .join("")}
        `;

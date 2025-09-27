@@ -8,7 +8,7 @@ var navigationParent = document.querySelector("#navigation");
 function loadNav() {
   return `
   <nav class="navigation flex justify-between align-center" aria-label="Main navigation">
-    <a href="/index.html" class="logo"></a>
+    <a href="/index.html" class="logo" aria-label="Link to homepage"></a>
     <div class="navigation-divider divider-white"></div>
     <div class="navigation-menu-container flex justify-center" data-visible="false">
       ${data.navItems

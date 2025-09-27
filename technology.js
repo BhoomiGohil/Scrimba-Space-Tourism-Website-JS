@@ -9,9 +9,10 @@ function loadTechnologyPaginations() {
           ${data.technology
             .map(
               (element, index) =>
-                `<div class="large-pagination fs-4 ff-bellefair flex justify-center align-center" role="pagination">
+                `<a class="large-pagination fs-4 ff-bellefair flex justify-center align-center" role="pagination" 
+                    aria-label="Show ${element.name} technology profile">
                   ${index + 1}
-                </div>`
+                </a>`
             )
             .join("")}
         `;
