@@ -37,6 +37,7 @@ function updateContent(index) {
 
   crewParent.querySelector(".content-image > img").src =
     "." + element.images.webp;
+  crewParent.querySelector(".content-image > img").alt = element.images.alt;
   crewParent.querySelector(".content-name").textContent = element.name;
   crewParent.querySelector(".content-role").textContent = element.role;
   crewParent.querySelector(".content-bio").textContent = element.bio;

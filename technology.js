@@ -39,11 +39,15 @@ function updateContent(index) {
 
   technologyParent.querySelector(".content-image.technology > img").src =
     "." + element.images.portrait;
+  technologyParent.querySelector(".content-image.technology > img").alt =
+    element.images.alt;
   technologyParent.querySelector(".content-name").textContent = element.name;
   technologyParent.querySelector(".content-description").textContent =
     element.description;
   technologyParent.querySelector(".content-image.technology-mobile > img").src =
     "." + element.images.landscape;
+  technologyParent.querySelector(".content-image.technology-mobile > img").alt =
+    element.images.alt;
 }
 
 // Load default content

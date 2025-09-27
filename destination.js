@@ -41,6 +41,8 @@ function updateContent(index) {
 
   destinationParent.querySelector(".content-image > img").src =
     "." + element.images.webp;
+  destinationParent.querySelector(".content-image > img").alt =
+    element.images.alt;
   destinationParent.querySelector(".content-name").textContent = element.name;
   destinationParent.querySelector(".content-description").textContent =
     element.description;
